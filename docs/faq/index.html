@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ – Quadrilingo docs</title>
+<meta name="description" content="Answers to common questions about Quadrilingo: languages, translation quality, data, security and billing.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/faq/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/">Getting started</a></li>
+        <li><a href="/docs/space-settings/">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/">Language switcher</a></li>
+        <li><a href="/docs/glossary/">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/faq/" aria-current="page">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>FAQ</h1>
+
+      <h2 id="general">General</h2>
+      <h3 id="translation-account">Do I need a DeepL, Google, OpenAI or other translation account?</h3>
+      <p>No. Translation is included in the subscription. You never enter an API key and you don't sign a contract with a translation provider.</p>
+
+      <h3 id="languages">Which languages are supported?</h3>
+      <p>English, French, German and Italian, in any direction. A space can choose Swiss variants in its <a href="/docs/space-settings/">space settings</a>: Swiss Standard German (“ss” instead of “ß”) and Swiss French (fr-CH: « dîner » for lunch, « souper » for dinner, amounts as « CHF 0.70 », typographic apostrophe). A space uses one German variant and one French variant at a time. Other languages are not planned for now.</p>
+
+      <h3 id="data-center">Does it work on Confluence Data Center or Server?</h3>
+      <p>No. Confluence Cloud only.</p>
+
+      <h3 id="rovo">Do I need Rovo or Atlassian Intelligence?</h3>
+      <p>No. The app works with or without Rovo.</p>
+
+      <h3 id="why-not-rovo">Rovo can already translate a page. Why use this app?</h3>
+      <p>If your plan includes Rovo, it can translate content. Quadrilingo focuses on what happens afterwards: each translation stays linked to its original, is marked <strong>Outdated</strong> when the original changes, and is updated from the page menu or automatically, with a space glossary and a language menu under the title of every translated page. Use whichever fits your needs.</p>
+
+      <h3 id="real-pages">Are translations real Confluence pages?</h3>
+      <p>Yes. Each translation is a child page of the original, with a translated title. Search, page tree, PDF/Word export, mobile apps and permissions work as usual.</p>
+
+      <h3 id="page-tree">Will translated pages clutter my page tree?</h3>
+      <p>Each translated page sits directly under its original, so a page translated into 3 languages has 3 child pages. A separate page tree per language is not available.</p>
+
+      <h2 id="quality">Quality</h2>
+      <h3 id="how-good">How good is the translation?</h3>
+      <p>It is machine translation, produced by DeepL. It is generally good for documentation, procedures and policies, but it is not a certified or legal translation. For contracts, legal texts or public communication, have a human review the result. You can edit any translated page.</p>
+
+      <h3 id="what-to-check">How do I know which parts to check?</h3>
+      <p>After a translation, the <strong>Translate this page</strong> dialog flags what may need a human look: “To review” (“À relire” in French) when a number, amount or currency may differ, or a mention, date or phone number may be attached to the wrong word. Select <strong>“Show the passages to review”</strong> to see each passage with its reason, the original and the translation. With Swiss French, a meal or CHF amount that could not be adapted is listed as <strong>“Swiss usage not applied here (meal or CHF amount): to review”</strong>. Correct the translated page by hand if needed.</p>
+
+      <h3 id="formatting">Is my formatting kept?</h3>
+      <p>Headings, lists, tables, panels, links, mentions, emojis and status labels are kept. Code blocks and macro settings are never translated. If a paragraph can't be translated without damaging its formatting, the original paragraph is kept. See <a href="/docs/translate-a-page/">Translate a page</a>.</p>
+
+      <h3 id="tone">Does it use “tu” or “vous”?</h3>
+      <p>Formal by default: “vous” in French, “Sie” in German, “Lei” in Italian. A space admin can change <strong>“Tone of the translations”</strong> to <strong>“Same as the original text”</strong> in the <a href="/docs/space-settings/">space settings</a>.</p>
+
+      <h3 id="product-names">How do I stop the app from translating our product names?</h3>
+      <p>A space admin adds them to the space <a href="/docs/glossary/">Glossary</a> under <strong>Do not translate</strong>. The glossary also holds <strong>Required translations</strong> (one term per language, Swiss Standard German included) and can be imported or exported as CSV.</p>
+
+      <h3 id="glossary-change">I changed the glossary. Are existing translations updated?</h3>
+      <p>No, nothing is re-translated automatically. The glossary applies to the next translations and updates. The next one counts the whole page, only in the languages the change affects.</p>
+
+      <h3 id="hand-edits">I corrected a translation by hand. Will the next update erase my change?</h3>
+      <p>Not automatically. The translation shows <strong>Edited by hand</strong> and is never overwritten by automatic updates. It is replaced only if someone ticks it in the <strong>Translate this page</strong> dialog and also ticks <strong>“Also replace translations that were edited by hand”</strong>.</p>
+
+      <h3 id="when-outdated">When is a translation marked outdated?</h3>
+      <p>A few minutes after the original page's content changes. Comments don't count. Restoring the version a translation was made from makes it <strong>Up to date</strong> again. This needs an active subscription. See <a href="/docs/outdated-translations/">Outdated translations</a>.</p>
+
+      <h2 id="data-security">Data and security</h2>
+      <h3 id="where-stored">Where are my translations stored?</h3>
+      <p>In your Confluence, as pages. Settings, glossary and the links between pages are stored in the app's storage hosted by Atlassian (Forge).</p>
+
+      <h3 id="sent-outside">Is my page content sent outside Atlassian?</h3>
+      <p>Yes, the text to translate is sent to DeepL SE, our translation provider, on a paid plan. Code, macro settings, link addresses, mentions, e-mail addresses and phone numbers are not sent. Sub-processors and processing locations are listed on our <a href="/subprocessors/">sub-processors page</a>; details in our <a href="/privacy/">privacy policy</a> and <a href="/data-flow/">data flow description</a>.</p>
+
+      <h3 id="ai-training">Do you use my content to train AI models?</h3>
+      <p>We don't train any model. DeepL states that texts sent through its paid API are not used to train its models (see DeepL's terms).</p>
+
+      <h3 id="uninstall">What happens to my data if I uninstall?</h3>
+      <p>Translated pages stay in your Confluence (they are your pages). App settings and glossary are deleted according to Atlassian's rules for app storage. Retention periods are listed in our <a href="/privacy/#retention">privacy policy</a>.</p>
+
+      <h3 id="certifications">Do you have SOC 2 or ISO 27001?</h3>
+      <p>No. We are a small independent vendor and hold no certification. Our <a href="/security/">security page</a> describes exactly what we do.</p>
+
+      <h2 id="billing">Billing</h2>
+      <h3 id="how-much">How much can I translate?</h3>
+      <p>Each site gets 300,000 characters per calendar month (150,000 per month during the free trial), shared by everyone who translates. See <a href="/docs/quotas-and-plans/">Quotas and plans</a>.</p>
+
+      <h3 id="used-up">What happens when the monthly allowance is used up?</h3>
+      <p>Translation stops until the 1st of the next month (UTC), or until your allowance is raised. Nothing is deleted and nothing extra is billed. Translations do not restart on their own: start them again from <strong>••• → Translate this page</strong>.</p>
+
+      <h3 id="more-characters">Can I get more characters?</h3>
+      <p>Yes, on request: write to us with your site ID (shown on the admin dashboard, <strong>Confluence settings → Quadrilingo</strong>) and we send you an extra volume code for your site. A Confluence admin pastes it on the same dashboard. You cannot buy extra characters through the Marketplace. See <a href="/docs/quotas-and-plans/#allowance">Quotas and plans</a>.</p>
+
+      <h3 id="contact">Who do I contact?</h3>
+      <p><a href="mailto:support@quadrilingo.com">support@quadrilingo.com</a> — in English, French or German. We reply within 1 business day (Monday–Friday, 9:00–17:00 Swiss time, excluding Swiss public holidays). See the <a href="/support/">support page</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

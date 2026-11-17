@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – Quadrilingo</title>
+<meta name="description" content="How Quadrilingo handles data from your Confluence Cloud site and the personal data we process as controller.">
+<link rel="alternate" hreflang="en" href="https://quadrilingo.com/privacy/">
+<link rel="alternate" hreflang="fr" href="https://quadrilingo.com/fr/privacy/">
+<link rel="alternate" hreflang="de" href="https://quadrilingo.com/de/privacy/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/privacy/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/privacy/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/privacy/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap legal">
+  <h1>Privacy Policy — Quadrilingo</h1>
+  <p class="updated">Last updated: 17 November 2026</p>
+
+  <h2 id="who-we-are">1. Who we are</h2>
+  <p>Quadrilingo (the “App”) is provided by <strong>Thibaut Keller</strong>, Route des Riaux 1, 1782 Lossy, Switzerland (“we”, “us”, “our”).</p>
+  <ul>
+    <li>Privacy questions and requests: <a href="mailto:privacy@quadrilingo.com">privacy@quadrilingo.com</a></li>
+    <li>Security issues: <a href="mailto:security@quadrilingo.com">security@quadrilingo.com</a></li>
+  </ul>
+  <p><strong>We, and not Atlassian, are responsible for the processing of personal data described in this policy.</strong> Atlassian's own privacy policy governs Atlassian's products, including Confluence Cloud and the Atlassian Marketplace.</p>
+
+  <h2 id="scope">2. Scope</h2>
+  <p>This policy explains:</p>
+  <ol>
+    <li>how the App handles data from your Confluence Cloud site when we process it <strong>on behalf of our customers</strong> (sections 3 to 6); and</li>
+    <li>how we handle personal data <strong>for our own purposes</strong>, for example licensing, support and security communications (section 7).</li>
+  </ol>
+  <p>It applies to Switzerland (Federal Act on Data Protection, “FADP”), the European Union and the European Economic Area (General Data Protection Regulation, “GDPR”), and any other country where the App is used, to the extent the local law applies.</p>
+
+  <h2 id="our-role">3. Our role</h2>
+  <ul>
+    <li><strong>Content processed by the App</strong> (page text, page titles, glossary entries, settings): your organisation (the customer that installed the App) is the <strong>controller</strong>. We act as a <strong>processor</strong> and only process this data to provide the App, following your organisation's instructions and our <a href="/dpa/">Data Processing Agreement</a>. If you are a user of a Confluence site, your organisation's privacy notice applies to you; please contact your organisation first.</li>
+    <li><strong>Our own business data</strong> (section 7): we are the <strong>controller</strong>.</li>
+  </ul>
+
+  <h2 id="app-processing">4. What the App processes on behalf of customers</h2>
+  <h3>4.1 Data the App reads, creates or stores</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Data</th><th scope="col">Why</th><th scope="col">Where it is kept</th></tr></thead>
+    <tbody>
+      <tr><td>Text and title of the pages you ask the App to translate, or that are set to update automatically; text and title of the page on which a user opens the “Translate this page” dialog (read in memory only, to estimate the volume and suggest the page's language, and not stored); text and title of a page that already has translations, each time someone edits it (read in memory only, to detect outdated translations; only a fingerprint is kept)</td><td>To produce the translated pages and keep them up to date</td><td>Your Confluence site (source and translated pages). Text sent to the translation engine is described in 4.3.</td></tr>
+      <tr><td>Links between a source page and its translations (page IDs, language and language variant, version numbers, translation status)</td><td>To show the language switcher and detect outdated translations</td><td>Your Confluence site (page content properties) and the App's storage on Atlassian's Forge platform</td></tr>
+      <tr><td>Space settings (source language, target languages, automatic updates on or off, formal or neutral tone, German for Germany or for Switzerland, French for France or for Switzerland)</td><td>To apply your choices</td><td>The App's storage on Forge</td></tr>
+      <tr><td>Language and time zone of the signed-in user, as provided by Confluence</td><td>To suggest default space settings (for example Swiss German for a user in Switzerland)</td><td>Not stored: only read while one of the App's screens loads or saves</td></tr>
+      <tr><td>Glossary entries entered by your space administrators (only space administrators can view or change them)</td><td>To translate your terms consistently</td><td>The App's storage on Forge and the translation engine (see 4.3)</td></tr>
+      <tr><td>Previously translated text segments (translation memory)</td><td>To avoid re-translating unchanged paragraphs</td><td>The App's storage on Forge</td></tr>
+      <tr><td>Edit restrictions of a source page (account and group IDs allowed to edit it)</td><td>To apply the same edit restrictions to the translated page, only where this does not allow more people to edit it</td><td>Written to the translated page's restrictions in your Confluence site, only where this does not widen edit access (otherwise left unchanged). Not stored by the App and never logged.</td></tr>
+      <tr><td>Status, creation date and last author (account ID) of the source and translated pages</td><td>To avoid writing to pages that are in the trash, archived, moved or edited by someone, and to recognise a translated page edited by a person (it is then never updated automatically)</td><td>Read in memory only; not stored and never logged</td></tr>
+      <tr><td>Number of characters translated per site and per month</td><td>Quota and licence management</td><td>The App's storage on Forge</td></tr>
+      <tr><td>Quota code, if we issued one for your site (site ID, monthly volume, issue and expiry dates; no names or e-mail addresses)</td><td>To apply the additional translation volume agreed with your organisation</td><td>The App's storage on Forge</td></tr>
+      <tr><td>Technical identifiers in logs (site, space and page IDs, error codes, counts)</td><td>Operation, troubleshooting and security</td><td>Atlassian's Forge logs (see 6). <strong>Logs never contain page content, names or e-mail addresses.</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Pages can contain personal data written by your authors (for example names, roles or contact details). The App processes such data only as part of the page text. The App is not designed to process special categories of personal data (Art. 9 GDPR) or sensitive personal data (Art. 5(c) FADP), for example health data; please do not use it to translate such content unless your organisation has assessed that this is appropriate.</p>
+
+  <h3>4.2 What the App does not do</h3>
+  <ul>
+    <li>It does not read comments, attachments, user profiles or e-mail addresses of your users. (It only receives from Confluence the language and time zone of the signed-in user, see 4.1, and does not store them.)</li>
+    <li>It does not put user account IDs in its translation jobs or its storage. The App checks the permissions of the user who starts a translation, then performs the translation under its own app identity.</li>
+    <li>Before text leaves your page for translation, the App removes code blocks, macro parameters, user mentions, links, e-mail addresses, URLs and phone numbers, and replaces them with neutral placeholders. They are put back locally afterwards.</li>
+    <li>It does not use analytics, tracking or advertising tools.</li>
+    <li>It does not sell personal data and does not use your content to train any AI model. We do not run our own servers.</li>
+  </ul>
+
+  <h3 id="translation-engine">4.3 Translation engine</h3>
+  <p>Translations are produced by <strong>DeepL SE</strong> (Cologne, Germany) through its paid API, under our own DeepL contract and data processing agreement. You do not need a DeepL account. The App sends DeepL only the text segments to be translated, the page title, short context (for example the heading above a paragraph) and, if the space has a glossary, that glossary: the whole glossary of the space is stored in our DeepL account as a DeepL glossary so that DeepL can apply it (with a second copy of its entries into German, using the Swiss terms, if the space translates into Swiss Standard German). According to DeepL, texts sent through its paid API are not stored permanently, are deleted after translation and are not used to train its models; DeepL may keep them for a short time (according to its terms, at most 72 hours) if needed to handle an error. Glossaries are stored in our DeepL account under a random name, re-created every 25 days while they are in use, deleted as soon as they are replaced, and in any case deleted at the latest 31 days after they were created (see 6). DeepL may process data in the European Union, in the United States and in other regions where it uses Amazon Web Services infrastructure, including the Asia-Pacific region (see 9 and our <a href="/subprocessors/">sub-processor list</a>).</p>
+
+  <h2 id="hosting">5. Where data is hosted</h2>
+  <ul>
+    <li><strong>Your Confluence site</strong>: translated pages and their links are ordinary Confluence pages and properties. They stay under your administrators' control and follow your site's Atlassian data residency settings.</li>
+    <li><strong>Atlassian Forge</strong>: the App runs on Atlassian's Forge platform. Its storage and queues are hosted by Atlassian. Atlassian aims to run the App in the same location as your site, but may sometimes run it elsewhere for reliability, performance or security reasons.</li>
+    <li><strong>Translation engine</strong>: see 4.3.</li>
+  </ul>
+
+  <h2 id="retention">6. How long data is kept</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Data</th><th scope="col">Retention</th></tr></thead>
+    <tbody>
+      <tr><td>Source and translated pages, page properties</td><td>Until your users or administrators delete them. They remain in your Confluence site if the App is uninstalled.</td></tr>
+      <tr><td>Settings, glossary, links index, translation memory, quota counters, quota code (Forge storage)</td><td>While the App is installed. Translation memory entries are deleted 90 days after they were last used (Atlassian's platform may take up to 48 more hours). Quota counters are deleted after about 13 months. Technical job records (IDs, dates, counters; no content) are deleted within 1 to 7 days. After uninstallation, Atlassian deletes the App's storage according to its own retention schedule; Atlassian can restore it if you reinstall within 21 days.</td></tr>
+      <tr><td>Processing queue (page IDs, language and version only; no user identifier)</td><td>Up to 24 hours (technical maximum 96 hours).</td></tr>
+      <tr><td>Forge logs (no content)</td><td>30 days. Your site administrators can turn off our access to the App's logs.</td></tr>
+      <tr><td>Text sent to DeepL</td><td>Deleted by DeepL after translation, except short-term storage (at most 72 hours according to DeepL's terms) if needed to handle an error.</td></tr>
+      <tr><td>Glossaries stored at DeepL</td><td>Deleted as soon as they are replaced, and in any case at the latest 31 days after they were created, including after the App is uninstalled.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="controller">7. Personal data we process as controller</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Data</th><th scope="col">Purpose</th><th scope="col">Legal basis (GDPR)</th><th scope="col">Retention</th></tr></thead>
+    <tbody>
+      <tr><td>Licence and contact data that Atlassian shares with us when your organisation installs, evaluates or buys the App (organisation name, name and e-mail address of technical and billing contacts, licence tier, dates), and our record of any quota code we issue for your site (organisation, site ID, volume, expiry date)</td><td>Manage licences, provide support, inform you about important changes to the App (for example security notices), meet legal obligations</td><td>Legitimate interest in managing our customer relationships and running our business (Art. 6(1)(f)); contract (Art. 6(1)(b)) where you are yourself our customer; legal obligation (Art. 6(1)(c)) for accounting</td><td>Duration of the licence plus 24 months. Where these data appear in accounting records (for example Atlassian payment reports): 10 years (Art. 958f Swiss Code of Obligations).</td></tr>
+      <tr><td>Support and security messages (name, e-mail address, content of the message, any attachments you send)</td><td>Answer your request, investigate and fix problems</td><td>Legitimate interest (Art. 6(1)(f)); contract (Art. 6(1)(b)) where you are yourself our customer</td><td>24 months after the request is closed.</td></tr>
+      <tr><td>Vulnerability reports</td><td>Fix security issues, notify Atlassian and customers where required</td><td>Legitimate interest; legal obligation</td><td>24 months after the issue is closed, longer if required by law</td></tr>
+      <tr><td>Website server logs (IP address, date, page requested)</td><td>Security and operation of the website</td><td>Legitimate interest</td><td>Our website is hosted by GitHub, Inc. (GitHub Pages, USA), which logs visitors' IP addresses for security purposes and keeps them according to its own privacy statement. We do not receive these logs.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>We do not send marketing e-mails without your consent. We do not use cookies or analytics on our website.</p>
+  <p><strong>Please do not send us page content or other personal data in support requests unless it is needed to solve your problem.</strong> If you do, we use it only for that request.</p>
+  <p>We do not use automated decision-making or profiling that has legal or similarly significant effects.</p>
+
+  <h2 id="recipients">8. Who receives personal data</h2>
+  <p>We do not sell or rent personal data. We share it only with:</p>
+  <ul>
+    <li><strong>Atlassian</strong> (hosting of the App on Forge; Marketplace licensing and billing);</li>
+    <li><strong>our translation engine provider</strong> (see 4.3) for the content to be translated;</li>
+    <li><strong>Infomaniak Network SA</strong> (Switzerland) for our e-mail (support and security messages);</li>
+    <li><strong>GitHub, Inc. (GitHub Pages, USA)</strong> for our website;</li>
+    <li>our accountant or fiduciary, for accounting records;</li>
+    <li>authorities, if we are legally required to do so.</li>
+  </ul>
+  <p>The current list of sub-processors for App data is published at <a href="/subprocessors/">quadrilingo.com/subprocessors</a>.</p>
+
+  <h2 id="transfers">9. International transfers</h2>
+  <p>We are based in Switzerland. The European Commission recognises that Switzerland provides an adequate level of data protection. Personal data may be processed in the following countries:</p>
+  <ul>
+    <li><strong>Switzerland</strong> (us);</li>
+    <li><strong>the countries where Atlassian hosts your site and the Forge platform</strong> according to your site's data residency settings, and the countries named in <a href="https://www.atlassian.com/legal/sub-processors">Atlassian's sub-processor list</a>, which include the <strong>United States</strong>. Atlassian relies on the EU-U.S. and Swiss-U.S. Data Privacy Framework and on Standard Contractual Clauses;</li>
+    <li><strong>Germany</strong> and other <strong>EU</strong> countries (DeepL SE is established in Germany), the <strong>United States</strong> and other countries in which DeepL uses Amazon Web Services infrastructure, including in the <strong>Asia-Pacific</strong> region. According to DeepL, its transfers outside Europe rely on the EU-U.S. Data Privacy Framework and Standard Contractual Clauses;</li>
+    <li><strong>Switzerland</strong> for our e-mail provider, Infomaniak Network SA;</li>
+    <li>the <strong>United States</strong> for our website host, GitHub, Inc. (website server logs only).</li>
+  </ul>
+  <p>The EU/EEA countries are recognised by Switzerland as providing an adequate level of protection, and the United States are recognised for companies certified under the Swiss-U.S. Data Privacy Framework. When personal data is transferred to another country without an adequate level of protection under Swiss or EU law, the transfer relies on the European Commission's Standard Contractual Clauses (with the amendments required for Swiss law), concluded by us or by our sub-processor with its own sub-processors.</p>
+
+  <h2 id="security">10. Security</h2>
+  <p>We protect data with the measures described on our <a href="/security/">security page</a>: the App runs entirely on Atlassian's Forge platform, uses only the Confluence permissions it needs, encrypts data in transit, keeps secrets in encrypted Forge variables, and never writes page content to logs. No system is completely secure. If a security incident affects your data, we will inform your organisation without undue delay.</p>
+
+  <h2 id="rights">11. Your rights</h2>
+  <p>Depending on the applicable law, you may have the right to access your personal data, have it corrected or deleted, restrict or object to its processing, receive it in a portable format, and withdraw consent at any time.</p>
+  <ul>
+    <li>For data processed by the App on behalf of your organisation (sections 3 to 6), please contact your organisation. We will help it respond.</li>
+    <li>For data we process as controller (section 7), write to <a href="mailto:privacy@quadrilingo.com">privacy@quadrilingo.com</a>. We may ask you to prove your identity.</li>
+  </ul>
+  <p>You can also complain to a data protection authority: in Switzerland, the Federal Data Protection and Information Commissioner (FDPIC, <a href="https://www.edoeb.admin.ch">www.edoeb.admin.ch</a>); in the EU/EEA, the authority of your country of residence or work.</p>
+
+  <h2 id="children">12. Children</h2>
+  <p>The App is a business tool. It is not intended for children.</p>
+
+  <h2 id="changes">13. Changes to this policy</h2>
+  <p>We may update this policy. The date at the top shows the latest version. We will announce material changes on this page and, where the change affects App data, give our customers advance notice as described in our Data Processing Agreement.</p>
+
+  <h2 id="contact">14. Contact</h2>
+  <p>Thibaut Keller, Route des Riaux 1, 1782 Lossy, Switzerland — <a href="mailto:support@quadrilingo.com">support@quadrilingo.com</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

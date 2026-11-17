@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Translate a page – Quadrilingo docs</title>
+<meta name="description" content="How to translate a Confluence page with Quadrilingo, where translations go, and what is translated or kept as is.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/translate-a-page/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/">Getting started</a></li>
+        <li><a href="/docs/space-settings/">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/" aria-current="page">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/">Language switcher</a></li>
+        <li><a href="/docs/glossary/">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>Translate a page</h1>
+
+      <h2 id="how">How</h2>
+      <ol>
+        <li>Open the page.</li>
+        <li>Select <strong>••• (More actions) → Translate this page</strong> (the menu item is in English for now; the dialog follows your Confluence language).</li>
+        <li>Check the <strong>Original language</strong> shown at the top and the languages ticked under <strong>Translate into</strong>, then select <strong>Translate</strong>.</li>
+      </ol>
+      <p>The translation runs in the background. You can close the dialog and keep working. When it is done, the dialog shows <strong>Open</strong> next to each language, and a language label appears under the page title (see <a href="/docs/language-switcher/">Language switcher</a>).</p>
+      <p>In the dialog, each language shows its status: <strong>Not translated</strong>, <strong>Up to date</strong>, <strong>Outdated</strong>, <strong>In progress</strong>, <strong>Delayed</strong>, <strong>Edited by hand</strong>, <strong>Volume used up</strong>, <strong>Error</strong>, <strong>Status unknown</strong> or <strong>Page not found</strong>. Languages that need work are ticked when the dialog opens; up-to-date languages and languages edited by hand are not.</p>
+      <p>Who can do it: anyone who can <strong>add pages</strong> in the space, once translation is on for the space. Updating an existing translation also needs permission to <strong>edit</strong> that translated page. The app checks these permissions <strong>as you</strong> before anything is sent for translation; the translated pages are then written by the app.</p>
+
+      <h2 id="where">Where the translation goes</h2>
+      <ul>
+        <li>Each translation is a <strong>child page of the original</strong>, with a <strong>translated title</strong>.</li>
+        <li>If a page with that title already exists in the space, the language code is added: for example <code>Onboarding (DE)</code>.</li>
+        <li>The original and its translations are linked: the app knows which page is the German version of which, and from which version of the original it was made.</li>
+        <li>Translations are normal pages: they appear in search, in the page tree, in PDF/Word exports, and on the Confluence mobile apps.</li>
+        <li><strong>Permissions:</strong> a page restricted for viewing also restricts the pages under it in Confluence, so translations of a restricted page are not visible to people who cannot see the original.</li>
+        <li><strong>Original page restricted for editing:</strong> Quadrilingo translates it without ever editing it or changing its restrictions. The translation gets the same edit rights (plus Quadrilingo). The language switcher shows on the translations, not on the original. The dialog says so when Quadrilingo does not have <strong>Can edit</strong> on the page (<strong>Share</strong> → <strong>Specific access</strong>).</li>
+      </ul>
+
+      <h2 id="what-is-translated">What is translated, what is not</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Translated</th><th scope="col">Kept as is (never sent for translation)</th></tr></thead>
+        <tbody>
+          <tr><td>Page title</td><td>Code blocks and inline code</td></tr>
+          <tr><td>Paragraphs, headings, lists</td><td>Macro settings (Jira filters, table of contents, anchors…)</td></tr>
+          <tr><td>Table cells and table headers</td><td>Mentioned people (@name)</td></tr>
+          <tr><td>Panels (info, note, warning…), quotes</td><td>Emojis, dates</td></tr>
+          <tr><td>Tasks and decisions</td><td>Link addresses (the visible link text is translated, unless it is the address itself)</td></tr>
+          <tr><td>Expand titles, captions</td><td>E-mail addresses, phone numbers, web addresses</td></tr>
+          <tr><td>Status labels (e.g. “IN PROGRESS”)</td><td>Cells that contain only an amount (e.g. <code>CHF 450.–</code>) or only numbers</td></tr>
+          <tr><td>Image alt text</td><td>Images and attachments</td></tr>
+          <tr><td>Text inside “rich text” macros such as Excerpt or Page Properties</td><td>Page comments and inline comments</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Inline comments of the original are <strong>not</strong> copied to the translation.</p>
+      <p>Numbers and amounts are checked after translation: if a number may differ from the original, the dialog shows “To review: a number, amount or currency may differ from the original page.” Names listed under <strong>Do not translate</strong> in the space <a href="/docs/glossary/">Glossary</a> are checked the same way.</p>
+
+      <h2 id="paragraph-kept">If a paragraph stays in the original language</h2>
+      <p>The app protects your layout. If a paragraph comes back from translation with broken formatting (a lost link or mention, for example), the app first retries, then accepts the text with simplified formatting (bold, italic…), and only if that fails, <strong>keeps the original paragraph</strong> rather than damage the page. You may then see a paragraph in the source language inside a translated page; the dialog then says “Some passages could not be translated and were left in the original language.” Fix it by hand, or update the translation later.</p>
+
+      <h2 id="editing">Editing a translated page</h2>
+      <p>You can edit a translation like any page, for example to improve a sentence. The app notices it: the translation shows <strong>Edited by hand</strong> and is <strong>never overwritten automatically</strong>. It is replaced only if you tick that language in the dialog on the original page <strong>and</strong> tick <strong>“Also replace translations that were edited by hand”</strong>. See <a href="/docs/outdated-translations/#edited-by-hand">Outdated translations</a>.</p>
+
+      <h2 id="supported">Supported content</h2>
+      <ul>
+        <li>Pages: yes. Blog posts: no (the dialog says only pages can be translated).</li>
+        <li>Languages: English, French, German, Italian, in any direction.</li>
+        <li>Very long pages: supported; they take longer (several minutes for very long pages).</li>
+      </ul>
+
+      <h2 id="allowance">How much allowance it uses</h2>
+      <p>Each translation uses characters of the source text (spaces included), counted <strong>once per target language</strong>. Translating a 5,000-character page into 3 languages uses about 15,000 characters. Code, macro settings, mentions and number-only cells are not counted. When you update a translation, passages already translated are reused and not counted again, except right after a glossary change (see <a href="/docs/glossary/#when-the-glossary-applies">Glossary</a>). See <a href="/docs/quotas-and-plans/">Quotas and plans</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

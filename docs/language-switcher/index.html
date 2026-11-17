@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Language switcher – Quadrilingo docs</title>
+<meta name="description" content="How readers switch between language versions of a Confluence page with Quadrilingo, and what each status means.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/language-switcher/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/">Getting started</a></li>
+        <li><a href="/docs/space-settings/">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/" aria-current="page">Language switcher</a></li>
+        <li><a href="/docs/glossary/">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>Language switcher</h1>
+      <p>Once a page has a translation, a short label appears <strong>under the page title</strong>, next to the author and date. It lists the language codes of the page family, the page's own language first, for example:</p>
+      <ul>
+        <li>on an English original translated into French, German and Italian: <strong>EN · FR · DE · IT</strong></li>
+        <li>on its German translation: <strong>DE · EN · FR · IT</strong>, or <strong>DE · <span lang="de">veraltet</span></strong> (“outdated”, in the page's language) when the original changed since this translation was made.</li>
+      </ul>
+      <p>The label is written in the language of the page it is on. Hovering over it shows a short summary, such as “Translated from EN (up to date)”.</p>
+
+      <h2 id="switch">Switch language</h2>
+      <ol>
+        <li>Select the label under the title. A small <strong>Languages</strong> menu opens, in your Confluence language (English, French, German or Italian; English for other languages).</li>
+        <li><strong>This page</strong> shows the language of the page you are reading, whether it is the <strong>Original page</strong> or a <strong>Translation</strong>, and its status.</li>
+        <li><strong>Other languages</strong> lists the original first, then the other languages, each with its status and an <strong>Open</strong> link.</li>
+        <li>Select <strong>Open</strong> next to a language. Confluence opens that version of the page.</li>
+      </ol>
+      <p>It works in every direction: from the original to a translation, from a translation back to the original, and between translations.</p>
+
+      <h2 id="statuses">Statuses</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">You see</th><th scope="col">Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Original</strong></td><td>The page the translations are made from.</td></tr>
+          <tr><td><strong>Up to date</strong></td><td>The translation was made from the current text of the original.</td></tr>
+          <tr><td><strong>Outdated</strong></td><td>The original changed after this translation was made. See <a href="/docs/outdated-translations/">Outdated translations</a>.</td></tr>
+          <tr><td><strong>Edited by hand</strong></td><td>Someone edited the translated page directly. It is never overwritten automatically.</td></tr>
+          <tr><td><strong>Not translated</strong></td><td>The language is turned on for the space, but this page has no translation in it yet. No link.</td></tr>
+          <tr><td><strong>Not available</strong></td><td>A version exists, but you cannot open it (page restrictions, or the page was trashed or deleted). No link and no status.</td></tr>
+          <tr><td><strong>Status unknown</strong></td><td>The pages are linked, but the app has no status for this one (for example after the app was reinstalled). To refresh it, update the translation from the original page.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Messages you may see instead of the list:</p>
+      <ul>
+        <li><strong>“This page is not linked to other languages.”</strong>: typically a copy of a translated page. See <a href="/docs/troubleshooting/">Troubleshooting</a>.</li>
+        <li><strong>“The original page is not available.”</strong>: you are on a translation and cannot open its original (restricted, trashed or deleted).</li>
+      </ul>
+
+      <h2 id="visibility">What readers see, and what they don't</h2>
+      <ul>
+        <li>The menu runs <strong>with your own permissions</strong>: a version you are not allowed to view shows <strong>Not available</strong>, with no link and no status. Page titles are never shown in the menu, only language names.</li>
+        <li>The short label under the title is a page property visible to anyone who can view the page: it lists the language codes of all versions and their status words, including versions some readers cannot open. It never contains titles, names or links.</li>
+        <li><strong>Readers need view permission</strong> on a translated page to open it, like any page.</li>
+        <li>The app does <strong>not</strong> read page content to build the menu.</li>
+      </ul>
+
+      <h2 id="good-to-know">Good to know</h2>
+      <ul>
+        <li><strong>Statuses need an active subscription to stay current.</strong> If the subscription ends, existing translations, the label and the menu keep working, but edits of originals are no longer tracked: a version can show <strong>Up to date</strong> although its original changed. The <strong>Translate this page</strong> dialog shows the real status.</li>
+        <li><strong>Translation turned off in a space</strong>: same effect for edits made while it is off, until the original is edited again. See <a href="/docs/outdated-translations/">Outdated translations</a>.</li>
+        <li><strong>Mobile apps</strong>: the label under the title may not appear in the Confluence mobile apps. Translations are still normal pages: open them from the page tree under the original, or from search.</li>
+        <li><strong>Original page restricted for editing:</strong> Quadrilingo translates it without ever editing it or changing its restrictions. The translation gets the same edit rights (plus Quadrilingo). The language switcher shows on the translations, not on the original.</li>
+        <li><strong>No per-reader preference</strong>: the app does not redirect readers to their language automatically. Readers choose the version they want.</li>
+      </ul>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

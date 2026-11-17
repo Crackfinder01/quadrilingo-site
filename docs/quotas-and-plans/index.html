@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quotas and plans – Quadrilingo docs</title>
+<meta name="description" content="Quadrilingo prices per user, the monthly translation allowance included in every plan, and what counts towards it.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/quotas-and-plans/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/">Getting started</a></li>
+        <li><a href="/docs/space-settings/">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/">Language switcher</a></li>
+        <li><a href="/docs/glossary/">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/" aria-current="page">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>Quotas and plans</h1>
+      <p>Translation is <strong>included</strong> in your Quadrilingo subscription. You don't pay a translation provider and you don't need any API key. To keep the price predictable, each site gets a <strong>monthly translation allowance</strong> (on the screens: <strong>monthly translation volume</strong>), counted in characters.</p>
+
+      <h2 id="plans">Plans</h2>
+      <p>Prices are per user per month, billed by Atlassian. Your tier follows the number of users of your Confluence site. Annual billing = 10 × the monthly price.</p>
+      <div class="table-wrap">
+      <table class="price-table">
+        <thead><tr><th scope="col">Users</th><th scope="col">Price per user / month</th></tr></thead>
+        <tbody>
+          <tr><td>1–10</td><td>Free</td></tr>
+          <tr><td>11–100</td><td>$1.10</td></tr>
+          <tr><td>101–200</td><td>$0.95</td></tr>
+          <tr><td>201–500</td><td>$0.80</td></tr>
+          <tr><td>501–1,000</td><td>$0.65</td></tr>
+          <tr><td>1,001–2,000</td><td>$0.55</td></tr>
+          <tr><td>2,001–5,000</td><td>$0.45</td></tr>
+          <tr><td>5,001 and more</td><td>$0.35</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Example: 50 users = $55 per month, or $550 per year. The exact price for your user count is shown on the Marketplace <strong>Pricing</strong> tab.</p>
+
+      <h2 id="allowance">Allowance</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Licence</th><th scope="col">Allowance</th></tr></thead>
+        <tbody>
+          <tr><td>Free trial (30 days)</td><td>150,000 characters per calendar month</td></tr>
+          <tr><td>Subscription, free 1–10 user tier included</td><td>300,000 characters per calendar month</td></tr>
+          <tr><td>More on request</td><td>Write to us with your <strong>site ID</strong>: we send you an <strong>extra volume code</strong> for your site. A Confluence admin pastes it in <strong>Confluence settings → Quadrilingo → “Extra volume code”</strong>. A code only raises the allowance, works only on your site and has an end date; the dashboard shows it and reminds you 30 days before it ends.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <ul>
+        <li>The allowance is <strong>per site</strong>, shared by everyone who translates, whatever the number of users.</li>
+        <li>It counts per <strong>calendar month (UTC)</strong> and starts again from zero on the 1st of each month. A trial that spans two calendar months gets 150,000 characters in each.</li>
+        <li><strong>From 57 users</strong>, the extra volume code is free on request and sized to your tier: 4,800 characters per month for each dollar of your monthly list price (for example 528,000 characters a month for 100 users, 1,920,000 for 500 users).</li>
+      </ul>
+
+      <h2 id="what-counts">What counts</h2>
+      <ul>
+        <li>Characters of the <strong>source text</strong> that is sent for translation, spaces included, <strong>once per target language</strong>. Example: a page of 5,000 characters translated into French, German and Italian = 15,000 characters.</li>
+        <li><strong>Not counted:</strong> code blocks, macro settings, mentions, emojis, link addresses, e-mail addresses, cells with only numbers or amounts.</li>
+        <li><strong>Not counted again:</strong> paragraphs that did not change since the last translation, and identical paragraphs repeated in a page.</li>
+        <li><strong>Exception, after a glossary change:</strong> the next translation or update of a page counts the whole page, only in the languages the change affects. Changing the glossary never re-translates anything by itself. See <a href="/docs/glossary/#when-the-glossary-applies">Glossary</a>.</li>
+        <li><strong>Automatic updates</strong> (if a space admin turned them on) count exactly like updates you start yourself.</li>
+        <li><strong>Not charged to you:</strong> automatic retries after a technical error.</li>
+      </ul>
+      <p>Before a translation starts, the “Translate this page” dialog shows the <strong>maximum</strong> it may use (often less, because passages already translated are not counted).</p>
+
+      <h2 id="examples">What 300,000 characters a month looks like</h2>
+      <p>A typical documentation page has 3,000 to 6,000 characters of text. With 300,000 characters you can, for example, translate about 20 new pages of 5,000 characters into 3 languages, or keep a larger set of existing pages up to date (updates only re-translate what changed). These are estimates: your use depends on page length and how often pages change.</p>
+      <p><strong>Translating many existing pages at the start</strong> can use several months of allowance at once. Start with the pages people read most, or ask us for a higher allowance.</p>
+
+      <h2 id="alerts">Alerts and limits</h2>
+      <ul>
+        <li>From <strong>80 %</strong> of the allowance, the “Translate this page” dialog shows how much of the month is used, and the admin dashboard (<strong>Confluence settings → Quadrilingo</strong>) shows a warning. At 100 % the dashboard says the volume is used up. There is <strong>no e-mail alert</strong>.</li>
+        <li><strong>Not enough left for this translation</strong>: if a translation could exceed what is left this month, it is not started. The dialog tells you how much is used and how much the translation may need: choose fewer languages, or wait until the 1st of next month (UTC).</li>
+        <li>At <strong>100 %</strong>: translation <strong>stops</strong> (new translations and updates, manual and automatic). Existing translations stay readable and the language switcher keeps working.</li>
+        <li><strong>You can translate again</strong> from the 1st of the next month (UTC), or as soon as your allowance is raised. <strong>Nothing restarts on its own</strong>: translations that were stopped stay as they are (the dialog shows <strong>Volume used up</strong>); start them again from <strong>••• → Translate this page</strong>. With automatic updates on, a stopped language is also scheduled again the next time its original is edited.</li>
+        <li><strong>No overage is ever billed.</strong> You cannot buy extra characters through the Marketplace.</li>
+      </ul>
+
+      <h2 id="consumption">Where to see your consumption</h2>
+      <p>In the “Translate this page” dialog, from 80 % of the allowance (used characters and the month's limit). Site-wide view at any time: the admin dashboard, <strong>Confluence settings → Quadrilingo</strong> (for Confluence admins), shows the subscription, this month's volume (used / included, in %), the extra volume code and your site ID, the spaces set up with Quadrilingo and their translations per status, and the pages to review. It only lists the spaces and pages you can see.</p>
+
+      <h2 id="subscription-ends">If the subscription ends</h2>
+      <p>Translated pages are normal Confluence pages and remain. The language switcher keeps working. Translating and updating are blocked until the subscription is active again, and edits of original pages are no longer tracked: no translation is marked <strong>Outdated</strong> meanwhile, so statuses can stay <strong>Up to date</strong> although the original changed. Uninstalling the app does <strong>not</strong> delete translated pages.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Quadrilingo handles your data</title>
+<meta name="description" content="Step by step: what Quadrilingo reads, sends, stores and deletes when it translates your Confluence pages.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/data-flow/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap legal">
+  <h1>How Quadrilingo handles your data</h1>
+  <p class="updated">Last updated: 17 November 2026</p>
+
+  <h2 id="in-short">In short</h2>
+  <ul>
+    <li>Translations are <strong>real Confluence pages</strong> in your site. They stay under your permissions and your data residency settings, and they remain if you uninstall the App.</li>
+    <li>The App runs entirely on <strong>Atlassian Forge</strong>. We do not operate any server of our own.</li>
+    <li>The only data that leaves Atlassian's cloud is the <strong>text to be translated</strong>, sent to <strong>DeepL SE</strong> over an encrypted connection. DeepL deletes it after translation.</li>
+    <li>The App never writes page content to logs and does not use analytics or tracking.</li>
+  </ul>
+
+  <h2 id="step-by-step">Step by step</h2>
+  <ol>
+    <li><strong>A user clicks “Translate this page”</strong> (or a translated page becomes outdated and automatic updates are on). The App checks, <strong>as that user</strong>, that they can read the page, create pages in the space and, if a translation already exists, edit it. It also checks your licence and your monthly quota. When the “Translate this page” dialog opens, the App reads that page as the user to estimate the volume and suggest the page's language; this happens in memory only, and nothing is stored, logged or sent for translation at that point.</li>
+    <li><strong>A background job is queued.</strong> It contains only IDs (page, language, version and, if a translation already exists, the ID of the translated page that was checked for that user) and <strong>no user identifier</strong>. If the user asked to overwrite manual edits, this applies only to that checked page, and only for languages shown as manually edited. The job runs <strong>as the App</strong> (the App's own Confluence account), and only after the checks of step 1. Automatic updates also run as the App and only refresh translations that already exist. Queue messages are kept for at most 24 hours.</li>
+    <li><strong>The App reads the page</strong> from your Confluence site.</li>
+    <li><strong>The App prepares the text.</strong> It keeps code blocks, macro parameters, user mentions, links, e-mail addresses, URLs and phone numbers in your page and replaces them with neutral placeholders. Some placeholders contain a fixed sample word that is the same for every customer (for example <code>@Alex</code> for a mention or <code>+41 00 000 00 00</code> for a phone number), so that the sentence is translated correctly around them; the real name, number or address is never sent. Only the remaining text, the page title, short context (for example the heading above a paragraph) and the matching glossary entries are sent for translation.</li>
+    <li><strong>Translation.</strong>
+      <ul>
+        <li>The text is sent over HTTPS to <code>api.deepl.com</code> (DeepL SE, Germany), using our own paid DeepL account. You need no DeepL account. DeepL deletes the text after translation and does not use it for training, according to its terms. DeepL may process data in the European Union, the United States and other regions where it uses Amazon Web Services infrastructure, including Asia-Pacific; see our <a href="/subprocessors/">sub-processor list</a>. If the space has a glossary, it is stored in our DeepL account (see step 10).</li>
+        <li>For Swiss French, the App requests standard French and then applies a few Swiss conventions itself (for example meal names, CHF amounts written as in the original, typographic apostrophes). This happens inside the App and sends nothing extra.</li>
+      </ul>
+    </li>
+    <li><strong>The App writes the translated page</strong> as a child page of the source page, and links both pages with page properties. Just before updating a translated page, the App reads it again (status, location, creation date and last author): it never writes to a page that is in the trash or archived, that was moved away from its source page, or that someone edited (unless a user who may edit it asked to overwrite it). The App's account is shown as the author of translated pages. A translated page inherits the view restrictions of its source page. If editing of the source page is restricted, the App applies the list of people and groups allowed to edit it to the translated page, plus its own account so that it can keep the translation up to date, <strong>only if this does not allow anyone to edit the translated page who cannot edit it today</strong>: the translated page has no edit restrictions yet, or everyone on the new list can already edit it. If nobody is listed as allowed to edit the source page, only the App can edit the translated page. The App never removes edit restrictions from a translated page. Otherwise the App leaves the restrictions unchanged and shows a warning; it does the same if it cannot read the current restrictions in full, and it never changes the restrictions of a translated page that has its own view restrictions. As a result, if editing of the source page is later opened to more people, this is not passed on to a translated page that already has its own edit restrictions. These account and group IDs are only written to the page's restrictions in your Confluence, never to the App's storage or logs. The App applies these restrictions before any other write to a new translated page, and again if the job stops or retries; if it cannot, the translation is shown with an error. If the App is not allowed to edit the source page, it writes nothing to it (no links, no label) and keeps the link between the two pages in its own storage only; it checks this with Confluence's list of the operations it may perform on that page, which names no people. Inline comments are not copied to translated pages. The App writes a page again only when the translation changed, so people watching a translated page get one notification per update.</li>
+    <li><strong>The App records</strong> the link, the translation status and the number of characters translated in its Forge storage, plus translated paragraphs (translation memory) so that unchanged paragraphs are not translated again. If some passages may need a human check (for example a number that differs from the original), the App records only their position in the page and a reason code, never their text. When a user asks to see these passages in the “Translate this page” dialog, the App reads the original and the translated page <strong>as that user</strong> and shows short excerpts to that user only; nothing is shown if the user cannot read both pages, and the excerpts are not stored or logged.</li>
+    <li><strong>When someone edits a page.</strong> Confluence notifies the App of page edits. For pages that are not part of a translation, or are in a space where the App is off, the App does nothing beyond looking up its own records. When a source page is edited, the App reads it (as the App, in memory) to compute a fingerprint and marks its translations as outdated; adding or resolving a comment does not count. If automatic updates are on for the space, the App queues one update per translated page, 10 minutes later, so that several edits in a row cost one update; it never creates a page this way, never updates a page that someone edited by hand, and stops if the licence is not active or the monthly quota is used up. When a translated page is edited by someone other than the App, the App reads only its metadata (version and last author, not its text) and marks it as manually edited. The App does not read who made an edit from the notification itself.</li>
+    <li><strong>Language switcher.</strong> When a user opens the language menu under a page title, the App looks up the page's languages <strong>as that user</strong>: it reads the links stored on the page and checks which pages of the family the user can see, without reading their text. If the source page holds no link (because the App may not edit it), the menu appears on translated pages only, and only if the App's own records name that page as the translation and it is still a child page of the source. A page the user cannot see is shown as “Not available”, with no status and no link. Nothing is stored or logged. The short label under the title (stored as a page property) lists the language codes and status words of the whole family, with no titles, names or links, and is visible to anyone who can view the page.</li>
+    <li><strong>Space glossary.</strong> Only space administrators can view or change a space's glossary; the App checks this on the server, as that user, at every request. The glossary is kept in the App's Forge storage and no user identifier is stored with it. Changing it does not re-translate any page; it applies to the next translations. Glossary exports (CSV) are protected against spreadsheet formulas. So that DeepL can apply it, the <strong>whole glossary of the space</strong> is also stored in our DeepL account as a DeepL glossary, under a random name with no site or customer name, separately for each site. If the space translates into Swiss Standard German and its glossary has Swiss terms, a second DeepL glossary holds the entries into German with those Swiss terms. While the App is installed, these glossaries are re-created every 25 days when in use, deleted when no space uses that version any more (at once, or by the next daily clean-up), and normally deleted by a daily clean-up at the latest about 27 days after creation. In any case, including after uninstallation, they are deleted at the latest 31 days after creation.</li>
+    <li><strong>Admin dashboard.</strong> The App's page in Confluence administration shows the subscription state, this month's translation volume, the quota code in force (if any) and the site ID needed to order one. It lists the spaces where the App has been set up and the pages whose translations need attention, but only the spaces and pages that the person viewing the dashboard can see, checked <strong>as that person</strong>; the number of translations per status shown for a space may include translations of pages in that space that the person cannot open (numbers only). It reads no page text or titles, and nothing is stored or logged. Its only action is applying a quota code, which works only if we signed it for your site. Confluence shows this page in its administration area; the App itself cannot check whether the viewer is a site administrator, because Atlassian does not provide an API for this to apps with the App's permissions.</li>
+  </ol>
+
+  <h2 id="storage">What is stored, where, and for how long</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Data</th><th scope="col">Where</th><th scope="col">How long</th></tr></thead>
+    <tbody>
+      <tr><td>Source and translated pages, page properties</td><td>Your Confluence site</td><td>Until you delete them</td></tr>
+      <tr><td>Sample page (our own text), created only when a user clicks “Translate a sample page”, with that user shown as its author</td><td>Your Confluence site</td><td>Until you delete it</td></tr>
+      <tr><td>Settings, glossary, links index</td><td>App storage on Atlassian Forge</td><td>While the App is installed, then deleted by Atlassian according to its retention schedule (restorable if you reinstall within 21 days)</td></tr>
+      <tr><td>Translation memory (translated paragraphs)</td><td>App storage on Atlassian Forge</td><td>Deleted 90 days after it was last used (Atlassian may take up to 48 more hours), and as above after uninstallation</td></tr>
+      <tr><td>Quota counters (characters translated per month; no personal data)</td><td>App storage on Atlassian Forge</td><td>About 13 months: each monthly counter is deleted 365 days after its last update (the longest expiry Forge supports), plus up to 48 hours for platform deletion</td></tr>
+      <tr><td>A language code and a yes/no “Switzerland” indicator, worked out in your browser from the language and time zone Confluence provides (the raw values are not sent), used only to suggest default settings (for example Swiss German or Swiss French for users in Switzerland)</td><td>Not stored</td><td>Only during a request from one of the App's screens</td></tr>
+      <tr><td>Quota code, if we issued one for your site (site ID, monthly volume, issue and expiry dates, date applied; no personal data)</td><td>App storage on Atlassian Forge</td><td>While the App is installed</td></tr>
+      <tr><td>Queue messages (IDs only, no user identifier)</td><td>Atlassian Forge</td><td>At most 24 hours</td></tr>
+      <tr><td>Technical job records (page IDs, dates, counters and fingerprints of text segments, and the time of a scheduled automatic update; no text, no user identifier)</td><td>App storage on Atlassian Forge</td><td>Deleted when the job ends, otherwise after 1 day; completion records after 7 days (plus up to 48 hours for platform deletion)</td></tr>
+      <tr><td>Passages to check (position in the page, fingerprint of the original paragraph and a reason code; no text, no user identifier)</td><td>App storage on Atlassian Forge</td><td>Replaced at each translation and deleted when nothing is left to check; otherwise deleted after 365 days (plus up to 48 hours for platform deletion), and as above after uninstallation</td></tr>
+      <tr><td>Logs (IDs, error codes, counts — never content)</td><td>Atlassian Forge</td><td>30 days</td></tr>
+      <tr><td>Text sent for translation</td><td>DeepL</td><td>Deleted after translation (short-term storage only if needed to handle an error)</td></tr>
+      <tr><td>Glossaries (stored under a random name, with no site or customer name)</td><td>Our DeepL account</td><td>Re-created every 25 days while in use and deleted as soon as they are replaced. In any case deleted at the latest 31 days after creation, including after uninstallation</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="residency">Data residency</h2>
+  <ul>
+    <li>Your pages follow your Confluence site's data residency.</li>
+    <li>The App's Forge storage is hosted by Atlassian in your site's region. Atlassian aims to run the App in the same location as your site, but may sometimes run it elsewhere.</li>
+    <li>Because text is sent to DeepL, <strong>the App does not claim data residency (PINNED) status</strong>, and we do not guarantee that translation takes place in Europe.</li>
+  </ul>
+
+  <h2 id="questions">Questions</h2>
+  <p>Write to <a href="mailto:support@quadrilingo.com">support@quadrilingo.com</a>. Security issues: <a href="mailto:security@quadrilingo.com">security@quadrilingo.com</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

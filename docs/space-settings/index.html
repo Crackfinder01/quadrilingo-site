@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space settings – Quadrilingo docs</title>
+<meta name="description" content="Turn translation on for a Confluence space and choose its original language, translation languages, Swiss variants, tone and automatic updates.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/space-settings/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/">Getting started</a></li>
+        <li><a href="/docs/space-settings/" aria-current="page">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/">Language switcher</a></li>
+        <li><a href="/docs/glossary/">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>Space settings</h1>
+      <p>Translation is turned on <strong>space by space</strong>. Each space has its own original language, translation languages and options. Labels in <strong>bold quotes</strong> are the ones on the screen (English version; the screen follows your Confluence language).</p>
+
+      <h2 id="where">Where to find them</h2>
+      <p>In the space settings, open <strong>Quadrilingo</strong>.</p>
+      <p>Only <strong>space admins</strong> see and change these settings. Other people don't get a read-only view: if they open the screen, they see “Only administrators of this space can change these settings.”</p>
+
+      <h2 id="settings">Settings</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">On the screen</th><th scope="col">What it does</th><th scope="col">Default</th></tr></thead>
+        <tbody>
+          <tr><td><strong>“Turn on translation in this space”</strong></td><td>Turns the app on for this space. When off, nobody can start a translation here; pages already translated stay in place. In the “Translate this page” dialog, a space admin can also turn it on with <strong>“Turn on for this space”</strong>.</td><td>Off until a space admin turns it on</td></tr>
+          <tr><td><strong>“Language of the original pages”</strong> (the <strong>original language</strong>)</td><td>The language pages in this space are written in: English, French, German or Italian. Once a page of the space is translated, it can no longer change.</td><td>Your Confluence language (English if it is another language). When turned on from the dialog: guessed from the text of the page you are on.</td></tr>
+          <tr><td><strong>“Translate into”</strong></td><td>The languages translations are created in: any of English, French, German, Italian except the original language. At least one.</td><td>All three other languages ticked</td></tr>
+          <tr><td><strong>“Swiss Standard German (writes “ss” instead of “ß”)”</strong></td><td>German translations are written the Swiss way. Applies to German as a translation language.</td><td>On when your Confluence locale is Swiss (for example de-CH, fr-CH) or your time zone is Europe/Zurich; off otherwise</td></tr>
+          <tr><td><strong>“Swiss French (“dîner” for lunch, “souper” for dinner, amounts as “CHF 0.70”, typographic apostrophe ’)”</strong> (fr-CH)</td><td>French translations follow Swiss usage: meals named the Swiss way, Swiss franc amounts written as in the original (« CHF 0.70 »), typographic apostrophe. Shown only when French is a translation language. When a meal or an amount cannot be adapted safely, the passage is left as translated and listed <strong>“To review”</strong> (see below).</td><td>On when your Confluence locale is Swiss (for example de-CH, fr-CH) or your time zone is Europe/Zurich; off otherwise</td></tr>
+          <tr><td><strong>“Update translations automatically”</strong></td><td>About 10 minutes after an original page changes, its existing translations are updated without anyone clicking. Never creates new translation pages, never overwrites a translation <strong>Edited by hand</strong>. This uses your monthly allowance. When off, you update translations yourself from the “Translate this page” dialog. Details: <a href="/docs/outdated-translations/#automatic-updates">Outdated translations</a>.</td><td>Off</td></tr>
+          <tr><td><strong>“Tone of the translations”</strong></td><td><strong>“Formal (Sie, vous, Lei)”</strong>: French, German and Italian translations address the reader formally. <strong>“Same as the original text”</strong>: the translation engine follows the original where it can (English has no formal/informal distinction, so this makes no difference from English).</td><td>Formal</td></tr>
+          <tr><td><strong>Space glossary</strong> (below the settings)</td><td>Names never to translate and required translations per language, for every page of the space. See <a href="/docs/glossary/">Glossary</a>.</td><td>Empty</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>A space uses one German variant and one French variant at a time (standard or Swiss), not both side by side. Swiss German is shown only when German is a translation language.</p>
+
+      <h2 id="good-to-know">Good to know</h2>
+      <ul>
+        <li><strong>Changing the languages under “Translate into”</strong> does not delete existing translations. Removing a language stops new translations and automatic updates into it.</li>
+        <li><strong>Turning translation off</strong> does not delete any page. Existing translations stay as normal Confluence pages. While it is off, edits of original pages are not tracked: after you turn it on again, each page is checked the next time its original is edited, and until then its translations can still show <strong>Up to date</strong>.</li>
+        <li><strong>Turning on “Update translations automatically”</strong> does not update pages that are already outdated right away: each one is updated the next time its original is edited. Update them from the dialog to catch up now.</li>
+        <li><strong>Pages written in another language than the space's original language</strong>: a space has one original language. If a page clearly looks like it is written in another language, the “Translate this page” dialog warns you before you translate (short or mixed-language pages get no warning).</li>
+        <li><strong>Automatic updates use your monthly allowance.</strong> On a busy space, keep them off and update translations when a page is stable. See <a href="/docs/quotas-and-plans/">Quotas and plans</a>.</li>
+        <li><strong>If the original language of existing translations cannot be checked</strong> (rare), you can still turn translation off; other changes and turning it on wait until it can be checked again.</li>
+        <li><strong>Changing a Swiss variant</strong> (Swiss German or Swiss French) applies to the next translations and updates. Existing translations made in the other variant then show as <strong>“Outdated”</strong> in the “Translate this page” dialog and the language menu (the note under the page title and the admin dashboard catch up at the next change in that page family): update them from the “Translate this page” dialog, or they follow at the next change of their original page when automatic updates are on. Switching between French and Swiss French usually uses none of your monthly volume; switching between German and Swiss German translates the page again and counts like any update.</li>
+        <li><strong>Passages to review (“À relire” in French)</strong>: after a translation, the “Translate this page” dialog can show <strong>“Show the passages to review”</strong> for a language. Each passage gives the reason (a number or currency differs, an element possibly misplaced, or <strong>“Swiss usage not applied here (meal or CHF amount): to review”</strong>), then the original and the translated text. These are hints, not errors: check the passage in the translation and correct it by hand if needed.</li>
+        <li><strong>Two people editing at once</strong>: if someone else saved the settings after you opened the screen, saving is refused and you are asked to reload them.</li>
+      </ul>
+
+      <h2 id="site-overview">Site-wide overview (Confluence admins)</h2>
+      <p>The admin dashboard, <strong>Confluence settings → Quadrilingo</strong>, shows how much of the monthly allowance is used and lists the spaces where Quadrilingo is set up (on or off) that you can see: their languages, whether automatic updates are on, and how many translations are <strong>Up to date</strong>, <strong>Outdated</strong>, <strong>Edited by hand</strong>, <strong>Error</strong>, <strong>Volume used up</strong> or <strong>In progress</strong>. Spaces never set up are not listed. For each space, <strong>“Pages to review”</strong> lists its pages with an error, edited by hand or outdated (with links to the pages you can open; no page titles), and <strong>“Settings and glossary”</strong> opens this screen. There is no e-mail alert.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

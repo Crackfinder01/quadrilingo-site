@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outdated translations – Quadrilingo docs</title>
+<meta name="description" content="How Quadrilingo marks translations as outdated when the original changes, and how to update them manually or automatically.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/outdated-translations/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/">Getting started</a></li>
+        <li><a href="/docs/space-settings/">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/" aria-current="page">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/">Language switcher</a></li>
+        <li><a href="/docs/glossary/">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>Outdated translations</h1>
+      <p>The main reason to use Quadrilingo instead of copying translations by hand: when the original page changes, you see which translations are behind, and you bring them up to date from the page menu or automatically. Labels in <strong>bold</strong> are the ones on the screen (English version; the screens follow your Confluence language).</p>
+
+      <h2 id="how-outdated">How a translation becomes “Outdated”</h2>
+      <ol>
+        <li>Someone edits and <strong>publishes</strong> the original page.</li>
+        <li>A few minutes later (Confluence notifies the app with a delay of up to about 3 minutes), each translation of that page is marked <strong>Outdated</strong>.</li>
+        <li>You see it everywhere the app shows a status: in the label under the page title, in the language menu that opens from it (see <a href="/docs/language-switcher/">Language switcher</a>), and in the <strong>Translate this page</strong> dialog.</li>
+      </ol>
+      <p>What does <strong>not</strong> make a translation outdated:</p>
+      <ul>
+        <li><strong>Adding, answering or removing a comment</strong> on the original (page or inline comment). Only a change of the page content counts.</li>
+        <li><strong>Editing a translation.</strong> It does not mark the original or the other translations as outdated (see “Edited by hand” below).</li>
+        <li><strong>Changing the space glossary.</strong> It applies to the next translations and updates only (see <a href="/docs/glossary/">Glossary</a>).</li>
+      </ul>
+      <p><strong>Restoring an older version of the original:</strong> if you restore the exact text a translation was made from, that translation becomes <strong>Up to date</strong> again. Only the languages that really differ from the restored text stay <strong>Outdated</strong>.</p>
+      <p><strong>An active subscription is needed.</strong> Without an active subscription or trial, edits are not tracked: nothing is marked <strong>Outdated</strong>, so a label can still say <strong>Up to date</strong> after the original changed. Once the subscription is active again, a page is checked the next time its original is edited.</p>
+
+      <h2 id="update-yourself">Update an outdated translation yourself</h2>
+      <ol>
+        <li>Open the <strong>original</strong> page.</li>
+        <li>Select <strong>••• (More actions) → Translate this page</strong>.</li>
+        <li>Outdated languages are already ticked under <strong>Translate into</strong>. Up-to-date languages and languages <strong>Edited by hand</strong> are left unticked.</li>
+        <li>Select <strong>Translate</strong>.</li>
+      </ol>
+      <p>If you open the dialog on a <strong>translated</strong> page, it tells you that the page is a translation and offers <strong>Open the original page</strong>: updates always start from the original.</p>
+      <p>Passages that did not change since the last translation are reused and are not counted again in your monthly volume. The dialog shows the <strong>maximum</strong> volume an update may use; it is often less. Exception: right after a <a href="/docs/glossary/">glossary</a> change, the next update counts the whole page for the languages the change affects.</p>
+
+      <h2 id="automatic-updates">Automatic updates (optional, per space)</h2>
+      <p>A space admin can turn on <strong>“Update translations automatically”</strong> in the <a href="/docs/space-settings/">space settings</a>. Then:</p>
+      <ul>
+        <li>About <strong>10 minutes</strong> after the original changes, its outdated translations are updated without anyone clicking. Several edits made during those 10 minutes are combined into one update per language, made from the latest version.</li>
+        <li>Only <strong>existing</strong> translations are updated. No new translation page is ever created automatically: to add a language, translate the page yourself.</li>
+        <li>A translation <strong>Edited by hand</strong> is <strong>never</strong> overwritten automatically.</li>
+        <li>Automatic updates use your <strong>monthly translation volume</strong>, like manual ones. On a busy space, consider leaving the option off and updating pages once they are stable. See <a href="/docs/quotas-and-plans/">Quotas and plans</a>.</li>
+        <li>If the monthly volume is used up, the update does not start and the language shows <strong>Volume used up</strong> in the dialog. Nothing restarts on its own: the language is updated at the next edit of the original once volume is available again, or when you update it from the dialog.</li>
+        <li>If the option is turned off, the language is removed from <strong>Translate into</strong>, or translation is turned off for the space during those 10 minutes, the planned update does not happen and uses nothing.</li>
+        <li>While an automatic update is waiting, the translation still shows <strong>Outdated</strong>. You can update it yourself at any time; the automatic update then has nothing left to do.</li>
+      </ul>
+      <p><strong>Turning the option on</strong> does not update, on the spot, pages that are already outdated. Each of them is updated the next time its original is edited. To catch up right away, update them from the dialog.</p>
+
+      <h2 id="edited-by-hand">Edited by hand</h2>
+      <p>You can edit a translated page like any page, for example to improve a sentence. The app notices it: the translation shows <strong>Edited by hand</strong> and is <strong>never overwritten automatically</strong>, even if the original changes later.</p>
+      <p>To replace it anyway with a fresh translation:</p>
+      <ol>
+        <li>On the original page, open <strong>Translate this page</strong>.</li>
+        <li>Tick the language marked <strong>Edited by hand</strong>. The option <strong>“Also replace translations that were edited by hand”</strong> appears.</li>
+        <li>Tick it and select <strong>Translate</strong>. The changes made directly on that translated page are lost, so copy anything you want to keep first.</li>
+      </ol>
+      <p>A translation edited by hand keeps the <strong>Edited by hand</strong> status when the original changes later; the dialog on the original is where you decide to replace it.</p>
+      <p>Tip: if you often correct the same word, add it to the <a href="/docs/glossary/">Glossary</a> instead.</p>
+
+      <h2 id="turned-off">Translation turned off in a space</h2>
+      <p>While translation is turned off for a space, edits of its original pages are not tracked. After it is turned on again, a page is checked the next time its original is edited (any edit, adding a comment included). Until then, its translations can still show <strong>Up to date</strong>. The <strong>Translate this page</strong> dialog always compares with the current text of the page, so it shows the real status.</p>
+
+      <h2 id="when-updates-stop">When updates stop</h2>
+      <ul>
+        <li><strong>Monthly volume used up</strong>: see above and <a href="/docs/quotas-and-plans/">Quotas and plans</a>.</li>
+        <li><strong>No active subscription</strong>: translating and updating are blocked; reading keeps working.</li>
+        <li><strong>The app cannot write the translated page</strong> (page restrictions, approval required in the space, your organisation's app access rules): the language shows <strong>Error</strong> in the dialog with the reason. See <a href="/docs/troubleshooting/">Troubleshooting</a>.</li>
+      </ul>
+
+      <h2 id="notifications">Notifications</h2>
+      <p>People watching a translated page may receive a Confluence notification when it is updated.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

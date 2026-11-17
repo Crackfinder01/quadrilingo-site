@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary – Quadrilingo docs</title>
+<meta name="description" content="Use the Quadrilingo space glossary to keep product names untranslated and enforce your company's terms in each language.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/glossary/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/">Getting started</a></li>
+        <li><a href="/docs/space-settings/">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/">Language switcher</a></li>
+        <li><a href="/docs/glossary/" aria-current="page">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>Glossary</h1>
+      <p>Machine translation sometimes translates words that should never change (your product name) or picks a different word than the one your company uses. The glossary fixes this, <strong>per space</strong>: it applies to every page of the space. Labels in <strong>bold</strong> are the ones on the screen (English version; the screen follows your Confluence language).</p>
+
+      <h2 id="where">Where to find it</h2>
+      <p><strong>Space settings → Quadrilingo</strong>, below the translation settings: section <strong>Space glossary</strong>.</p>
+      <p>Only <strong>space admins</strong> can see and change the glossary. The app checks this on every load and every save.</p>
+
+      <h2 id="two-lists">Two lists</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">List</th><th scope="col">Example</th><th scope="col">Effect</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Do not translate</strong></td><td><code>Acme Cloud</code>, <code>SAP</code>, <code>KST-4100</code></td><td>Names of products, companies or people, kept as they are in every language.</td></tr>
+          <tr><td><strong>Required translations</strong></td><td>FR <em lang="fr">demande de congé</em> · DE <em lang="de">Ferienantrag</em> · IT <em lang="it">richiesta di ferie</em> · EN <em>holiday request</em></td><td>One term per language, on the same row. Whenever one of these terms is translated into another language of the row, that language's term is used.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>For <strong>Required translations</strong>, columns are <strong>French</strong>, <strong>German</strong>, <strong>Italian</strong>, <strong>English</strong> and <strong>Swiss Standard German</strong>:</p>
+      <ul>
+        <li>Fill in at least two languages per row. Leave a language empty when it has no required term.</li>
+        <li>The <strong>Swiss Standard German</strong> column is used only when the space translates into Swiss Standard German (see <a href="/docs/space-settings/">Space settings</a>). When it is empty, the German term is used. Example: German <em lang="de">Urlaub</em>, Swiss Standard German <em lang="de-CH">Ferien</em>.</li>
+        <li>In German pages, terms of both German columns are recognised.</li>
+      </ul>
+      <p><strong>Exact case</strong>: tick <strong>“Match upper and lower case exactly”</strong> when case matters (keep <code>SAP</code>, but not “sap”). A required-translation row written only in capitals (acronyms such as <code>AHV</code>/<code>AVS</code>) is always treated as exact case.</p>
+
+      <h2 id="edit">Add, edit or delete a term</h2>
+      <ol>
+        <li>Open the glossary.</li>
+        <li>Select <strong>Add a name</strong> (Do not translate) or <strong>Add a translation</strong> (Required translations).</li>
+        <li>Type the term, or the term in each language, then select <strong>Apply</strong>.</li>
+        <li>Select <strong>Save glossary</strong>. Until then, the screen shows <strong>Unsaved changes.</strong></li>
+      </ol>
+      <p>Use <strong>Edit</strong> or <strong>Delete</strong> on a row to change it.</p>
+      <p>Rules checked before saving:</p>
+      <ul>
+        <li>Up to <strong>500</strong> names not to translate and <strong>1,000</strong> required translations, <strong>100 characters</strong> per term.</li>
+        <li>Line breaks, tabs and the signs <code>&lt;</code> <code>&gt;</code> are not allowed.</li>
+        <li>The same term cannot appear twice in a list, and a term cannot be in both lists.</li>
+      </ul>
+      <p><strong>Short acronym warning.</strong> For a short acronym in a required translation (for example <code>AI</code> → <code>IV</code>, the Swiss disability insurance), the screen warns you: the acronym will be replaced wherever it appears, whatever it means, so “AI” meaning artificial intelligence would also become “IV”. Keep such a row only if the acronym has a single meaning in the pages of this space. The warning does not block saving.</p>
+      <p>If someone else saved the glossary after you opened the screen, saving is refused: reload the glossary, then make your changes again.</p>
+
+      <h2 id="csv">Import or export (CSV)</h2>
+      <p>Under <strong>Import or export (CSV)</strong>:</p>
+      <ul>
+        <li><strong>Show CSV</strong> displays the whole glossary as CSV text to copy (into a spreadsheet, for example).</li>
+        <li>To import, paste a CSV table into the text box and select <strong>Replace the glossary with this CSV</strong>. The import <strong>replaces the whole glossary shown</strong>; check it, then select <strong>Save glossary</strong>.</li>
+      </ul>
+      <p>Format: header <code>kind,term,fr,de,it,en,de-CH,case_sensitive</code>, separated by commas, semicolons or tabs.</p>
+      <ul>
+        <li><code>kind</code> = <code>dnt</code> for a name not to translate (term in the <code>term</code> column), <code>forced</code> for a required translation (terms in the language columns).</li>
+        <li><code>case_sensitive</code> = <code>yes</code> or <code>no</code>.</li>
+      </ul>
+      <p>Example:</p>
+<pre><code>kind;term;fr;de;it;en;de-CH;case_sensitive
+dnt;Acme Cloud;;;;;;yes
+forced;;service de piquet;Bereitschaftsdienst;servizio di picchetto;on-call duty;Pikett;no</code></pre>
+      <p>Import errors give the CSV line number. There is no file upload: copy and paste the text. Cells starting with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code> are exported with a leading <code>'</code> so that spreadsheets do not run them as formulas; the import removes it.</p>
+
+      <h2 id="when-the-glossary-applies">When the glossary applies</h2>
+      <ul>
+        <li><strong>To the next translations and updates</strong> made after you save it.</li>
+        <li><strong>Nothing is re-translated automatically</strong> after a glossary change, and no page is marked <strong>Outdated</strong>. To apply a change to an existing translation, update it from <strong>••• → Translate this page</strong> on the original page, or wait for the next change of that page.</li>
+        <li><strong>Volume</strong>: after a glossary change, the next translation or update of a page counts the <strong>whole page</strong>, but only in the languages the change affects. Example: changing a French/German term does not make Italian → English updates count again.</li>
+        <li>After each translation, the app checks that the names under <strong>Do not translate</strong> are still there. If one seems to have been translated, the dialog shows “To review: a protected glossary name may have been translated.”</li>
+        <li>If the glossary could not be applied to a translation, the dialog says so (“The space glossary could not be applied to this translation.”). Run the translation again later to apply it.</li>
+        <li>If the saved glossary cannot be read, nothing is translated in the space and the dialog asks a space admin to save the glossary again.</li>
+      </ul>
+
+      <h2 id="tips">Tips</h2>
+      <ul>
+        <li>Start small: product names, team names, internal acronyms, and the 10–20 terms people complain about.</li>
+        <li>Swiss vocabulary (<span lang="de-CH">Pikett, Traktandum, Ferien</span>) belongs in the <strong>Swiss Standard German</strong> column of a required translation.</li>
+        <li>Language names: if a page lists “<span lang="fr">Français</span> / <span lang="de">Deutsch</span>”, add them under <strong>Do not translate</strong>.</li>
+      </ul>
+
+      <h2 id="storage">Where the glossary is stored</h2>
+      <p>In the app's Atlassian-hosted storage (Forge), for as long as the app is installed.</p>
+      <p>So that DeepL can apply it, a copy of the space glossary is also stored in our DeepL account (two copies when the space uses Swiss Standard German terms that differ from the German ones). Copies are replaced regularly and deleted automatically, at the latest 31 days after they were created. See our <a href="/privacy/">privacy policy</a> and <a href="/data-flow/">data flow description</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

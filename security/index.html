@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security – Quadrilingo</title>
+<meta name="description" content="How Quadrilingo is built, how it protects your data, and how to report a security issue.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/security/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap legal">
+  <h1>Security at Quadrilingo</h1>
+  <p class="updated">Last updated: 17 November 2026</p>
+  <p>Quadrilingo is built and operated by Thibaut Keller, a small independent software vendor based in Switzerland. This page explains how the App is built, how we protect your data, and how to report a security issue.</p>
+
+  <h2 id="certifications">Certifications</h2>
+  <p>We do <strong>not</strong> hold SOC 2, ISO 27001 or any other security certification, and the App has not undergone an independent penetration test. Instead, we rely on a deliberately small architecture: the App runs entirely on Atlassian's Forge platform, requests only the permissions it needs, and keeps your content in your own Confluence site. Atlassian's security and compliance information for the Forge platform is available in the <a href="https://www.atlassian.com/trust">Atlassian Trust Center</a>.</p>
+
+  <h2 id="architecture">Architecture</h2>
+  <ul>
+    <li><strong>Forge only.</strong> The App is an Atlassian Forge app. Its code runs on Atlassian's serverless platform; its storage, queues and logs are hosted by Atlassian. We do not operate any server, database or remote backend of our own.</li>
+    <li><strong>Native user interface.</strong> All screens use Atlassian UI Kit, rendered by Confluence itself.</li>
+    <li><strong>Translations are Confluence pages.</strong> Translated pages are ordinary child pages of the source page. Confluence enforces its own permissions on them; the App does not reimplement access control.</li>
+    <li><strong>Tenant isolation.</strong> Each installation has its own Forge storage, isolated by the Forge platform. The App never mixes data from different sites. Glossaries stored in our DeepL account are kept separately for each site and never shared between sites.</li>
+    <li><strong>Translation engine.</strong> Text to be translated is sent to DeepL SE's paid API (<code>api.deepl.com</code>) under our own contract and data processing agreement. This is the App's only connection outside Atlassian.</li>
+  </ul>
+
+  <h2 id="permissions">Permissions (scopes)</h2>
+  <p>The App requests only these Confluence permissions:</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Scope</th><th scope="col">Why</th></tr></thead>
+    <tbody>
+      <tr><td><code>read:page:confluence</code></td><td>Read the page to be translated and its page properties</td></tr>
+      <tr><td><code>write:page:confluence</code></td><td>Create and update translated pages, their page properties and their edit restrictions (based on the source page's edit restrictions, never widening edit access); create a sample page, as the signed-in user, when they click “Translate a sample page”</td></tr>
+      <tr><td><code>read:confluence-content.summary</code></td><td>Receive “page updated” events to detect outdated translations</td></tr>
+      <tr><td><code>read:space:confluence</code></td><td>Check, as the signed-in user, whether they administer a space or may create pages in it, and list the spaces they can see in the App's set-up and admin pages (read-only; nothing is stored)</td></tr>
+      <tr><td><code>storage:app</code></td><td>Store settings, glossary, links index, translation memory and quota counters in Forge storage</td></tr>
+      <tr><td>External connection to <code>api.deepl.com</code></td><td>Machine translation</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The App does not request permission to delete pages, read comments or attachments, search your site, or read user profiles.</p>
+
+  <h2 id="access-control">Authentication and access control</h2>
+  <ul>
+    <li>Authentication between the App and Confluence is handled entirely by the Forge platform. The App never asks for or stores Atlassian passwords or API tokens.</li>
+    <li>Before a translation is queued, the App checks <strong>as the signed-in user</strong> (Forge <code>asUser()</code>) that the user can read the page, create pages in the space and, if a translation already exists, edit it. A user can therefore only translate pages they can read, into spaces where they may create pages.</li>
+    <li>The translation job then runs <strong>as the App</strong> (Forge <code>asApp()</code>): translated pages are created and updated by the App's own account, which is shown as their author. Jobs carry no user identifier; they carry the ID of the existing translated page that was checked for the user, and a request to overwrite manual edits applies only to that page. Translated pages are child pages of their source page and inherit its view restrictions. Just before each update, the App reads the translated page again: if it was moved elsewhere, archived, put in the trash or edited by someone, the App does not write to it. When editing of the source page is restricted, its list of editors, together with the App's own account, is applied to the translated page <strong>only if this does not allow anyone to edit it who cannot edit it today</strong> (if that list is empty, only the App can edit the translation); otherwise, or if the current restrictions cannot be read in full, the App leaves them unchanged and shows a warning. The App never removes edit restrictions from a page, and never changes the restrictions of a translated page that has its own view restrictions, and it never overwrites a translated page that someone edited unless a user who may edit that page asks for it.</li>
+    <li>Automatic updates also run as the App. They only update translations that already exist; they never create new pages, and never update a translated page that someone edited by hand. When a page edit is reported by Confluence, the App ignores pages that are not part of a translation, and does not read who made the edit from the notification; it recognises its own edits by comparing the page's last author with its own account.</li>
+    <li>The language menu under a page title runs <strong>as the person viewing the page</strong>: it shows the status of, and a link to, only the pages that person can see. Other pages appear as “Not available”, with no status and no link. The menu does not read page text. Note: the short label under the title of every page of a translation family lists the language codes of all its translations and their status words (for example “FR · DE · IT”, “DE (up to date)”), with no titles, names or links, and anyone who can view that page can see it, including for translations they cannot open.</li>
+    <li>Space settings and glossaries can only be changed by a space administrator, and a glossary can only be viewed by a space administrator; this is checked on the server, as that user, at every request, not only by hiding the screen. The App's admin dashboard (in Confluence administration) lists only the spaces and pages that the signed-in user can already see, checked as that user; it also shows site-level figures (subscription state, monthly translation volume, quota code in force, site ID) and per-space numbers of translations by status, which may include translations of pages that user cannot open (numbers only, no titles or links). The App cannot itself verify that the viewer is a site administrator (Atlassian provides no API for this to apps with the App's permissions); the dashboard's only action, applying a quota code, accepts only codes we signed for your site.</li>
+  </ul>
+
+  <h2 id="data-protection">Data protection</h2>
+  <ul>
+    <li><strong>Minimisation.</strong> Only the text to be translated is sent for translation. Code blocks, macro parameters, user mentions, links, e-mail addresses, URLs and phone numbers stay in your page and are replaced by neutral placeholders.</li>
+    <li><strong>No content in logs.</strong> Logs contain only technical identifiers (site, space and page IDs), error codes and counts. They never contain page text, titles, glossary terms, names, e-mail addresses or secrets. Forge logs are kept for 30 days, and your administrators can switch off our access to them.</li>
+    <li><strong>No analytics or tracking.</strong> The App sends no usage analytics to us or to any third party.</li>
+    <li><strong>No AI training.</strong> We do not use your content to train any model. DeepL does not use texts sent through its paid API for training, according to its terms.</li>
+    <li><strong>Data flows and retention</strong> are described in detail in our <a href="/data-flow/">data flow description</a>.</li>
+  </ul>
+
+  <h2 id="encryption">Encryption</h2>
+  <ul>
+    <li><strong>In transit:</strong> all connections use HTTPS.</li>
+    <li><strong>At rest:</strong> App data is stored in Confluence and in Forge storage, which are protected by Atlassian's platform controls. We do not store your data anywhere else. Glossaries kept in our DeepL account are protected by DeepL's controls. They are stored under random names and deleted at the latest 31 days after creation.</li>
+    <li><strong>Secrets:</strong> the translation engine API key is stored as an encrypted Forge environment variable. It is never stored in source code, in a repository or in logs.</li>
+    <li><strong>Quota codes:</strong> codes for additional translation volume are signed offline by us and verified inside the App with a public key, without any call to our systems. A code contains only your site ID, a monthly volume, its issue and expiry dates (at most 400 days apart) and technical format and key identifiers, and does not work on any other site. The signing key is kept offline; it is never stored in the App, in Forge or in our code repository.</li>
+  </ul>
+
+  <h2 id="secure-development">Secure development</h2>
+  <ul>
+    <li>Every change is reviewed and tested before release (automated tests, Forge linting, code review).</li>
+    <li>Production dependencies are scanned with <code>npm audit</code> on every build; the build fails on high or critical findings. Vulnerable transitive dependencies of Atlassian SDKs are patched with npm overrides and tracked until upstream releases a fix. Atlassian also scans Marketplace apps for vulnerable dependencies.</li>
+    <li>The App runs on a supported Node.js runtime.</li>
+    <li>Input from users (settings, glossary) is validated on the server side. Glossary exports (CSV) are protected against spreadsheet formula injection. Content returned by the translation engine is validated before it is written to your pages: unexpected markup is rejected.</li>
+    <li>Development and testing use synthetic test pages only. No customer data is used for testing.</li>
+  </ul>
+
+  <h2 id="vulnerability-disclosure">Vulnerability disclosure</h2>
+  <p>If you believe you have found a security vulnerability in Quadrilingo, please e-mail <a href="mailto:security@quadrilingo.com"><strong>security@quadrilingo.com</strong></a> with:</p>
+  <ul>
+    <li>a description of the issue and its impact;</li>
+    <li>the steps to reproduce it;</li>
+    <li>your contact details (optional).</li>
+  </ul>
+  <p>What you can expect from us:</p>
+  <ul>
+    <li>acknowledgement within <strong>3 business days</strong>;</li>
+    <li>a first assessment and severity rating (CVSS) as soon as possible;</li>
+    <li>fixes within the timeframes of the <a href="https://developer.atlassian.com/platform/marketplace/security-bugfix-policy/">Atlassian Marketplace Security Bug Fix Policy</a>: critical 10 days, high 4 weeks, medium 12 weeks, low 25 weeks;</li>
+    <li>credit in our release notes if you wish.</li>
+  </ul>
+  <p>Please give us reasonable time to fix the issue before disclosing it publicly, do not access or modify data that does not belong to you, and do not run tests that could degrade the service for other customers. We will not take legal action against researchers who act in good faith and follow these guidelines. This commitment binds only us; it does not cover systems or data of Atlassian, DeepL or our customers.</p>
+  <p>Atlassian may also report vulnerabilities to us through its Marketplace security program; we handle those reports with the same timeframes.</p>
+
+  <h2 id="incident-response">Incident response</h2>
+  <p>If we become aware of a security incident affecting the App or customer data, we will:</p>
+  <ol>
+    <li><strong>Contain</strong> the issue (for example disable the affected feature, rotate keys, deploy a fix).</li>
+    <li><strong>Assess</strong> which customers and which data are affected.</li>
+    <li><strong>Notify Atlassian</strong> through its partner support channel <strong>within 24 hours</strong> of discovering the incident, as required by Atlassian.</li>
+    <li><strong>Notify affected customers</strong> without undue delay, and where possible within 48 hours of becoming aware of an incident affecting their personal data, with the information they need to meet their own legal obligations.</li>
+    <li><strong>Notify the authorities</strong> where we are legally required to do so as controller of our own data (for example the Swiss FDPIC). For customer content, we notify our customers, who decide on any notification to authorities.</li>
+    <li><strong>Review</strong> the incident and document the measures taken to prevent it from happening again.</li>
+  </ol>
+
+  <h2 id="continuity">Business continuity</h2>
+  <p>Because translated pages are ordinary Confluence pages, they remain readable and editable even if the App or the translation engine is unavailable, and after the App is uninstalled. The App's availability depends on the Atlassian Forge platform and on the translation engine.</p>
+
+  <h2 id="contact">Contact</h2>
+  <p>Security: <a href="mailto:security@quadrilingo.com"><strong>security@quadrilingo.com</strong></a> — Support: <a href="mailto:support@quadrilingo.com">support@quadrilingo.com</a><br>
+  Thibaut Keller, Route des Riaux 1, 1782 Lossy, Switzerland</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

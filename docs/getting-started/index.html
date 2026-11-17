@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started – Quadrilingo docs</title>
+<meta name="description" content="Install Quadrilingo on Confluence Cloud and translate your first page.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/getting-started/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/" aria-current="page">Getting started</a></li>
+        <li><a href="/docs/space-settings/">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/">Language switcher</a></li>
+        <li><a href="/docs/glossary/">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>Getting started</h1>
+      <p>Quadrilingo keeps Confluence pages in English, French, German and Italian, linked to each other. This page takes you from installation to your first translated page.</p>
+
+      <h2 id="what-you-need">What you need</h2>
+      <ul>
+        <li>A Confluence <strong>Cloud</strong> site. (Data Center and Server are not supported.)</li>
+        <li>To install: a <strong>site admin</strong> (or anyone your admins allow to install apps).</li>
+        <li>To turn translation on for a space: <strong>space admin</strong> rights on that space.</li>
+        <li>To translate a page: permission to <strong>add pages</strong> in that space.</li>
+      </ul>
+      <p>You do <strong>not</strong> need a DeepL, Google, OpenAI or any other translation account, and you never enter an API key. Translation is included in your subscription.</p>
+
+      <h2 id="install">Step 1 — Install the app</h2>
+      <ol>
+        <li>In Confluence, open <strong>Apps → Explore more apps</strong> (or go to the Atlassian Marketplace).</li>
+        <li>Search for <strong>Quadrilingo</strong> and select <strong>Try it free</strong>.</li>
+        <li>Review the access the app requests, then confirm.</li>
+      </ol>
+      <p>What the app asks to access, and why:</p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Access</th><th scope="col">Why</th></tr></thead>
+        <tbody>
+          <tr><td>Read pages</td><td>To read the page you want to translate.</td></tr>
+          <tr><td>Write pages</td><td>To create and update the translated pages.</td></tr>
+          <tr><td>Read content summaries</td><td>To notice when a source page is edited, so translations can be marked <strong>Outdated</strong>.</td></tr>
+          <tr><td>Read space details</td><td>To check what <strong>you</strong> may do in a space (turn translation on, add pages) and to list your spaces on the Get started page.</td></tr>
+          <tr><td>App storage</td><td>To keep space settings, glossary and links between pages.</td></tr>
+          <tr><td>Connection to <code>api.deepl.com</code></td><td>To send page text to our translation provider. Code blocks, macro settings, link addresses, mentions, e-mail addresses and phone numbers are not sent.</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="first-page">Step 2 — Translate your first page</h2>
+      <ol>
+        <li>Open any page in a space where you can add pages.</li>
+        <li>Select <strong>••• (More actions) → Translate this page</strong>. The menu item is in English for now, whatever your Confluence language; the dialog itself follows your language.</li>
+        <li>The first time you use the app, Atlassian asks you to <strong>Allow access</strong> for it (once per person). This is normal: the app checks with your own permissions that you may read the page, add pages and edit existing translations. The translated pages are then written by the app.</li>
+        <li>If translation is not on for this space yet, the dialog offers <strong>Turn on for this space</strong>. Select it (space admins only; other people see who to ask). The <strong>original language</strong> is pre-selected from the text of the page you are on; you can change it later in the <a href="/docs/space-settings/">space settings</a>, as long as no page of the space is translated yet.</li>
+        <li>Check the languages:
+          <ul>
+            <li><strong>Original language</strong>: the language the pages of this space are written in. It is shown at the top of the dialog.</li>
+            <li><strong>Translate into</strong>: the other languages among English, French, German and Italian are already ticked. Untick any you don't need.</li>
+          </ul>
+        </li>
+        <li>Select <strong>Translate</strong>.</li>
+      </ol>
+
+      <h3 id="sample-page">Shortcut: translate a sample page</h3>
+      <p>The app's <strong>Get started</strong> page offers <strong>Translate a sample page</strong>. It creates a short sample page in your name in the chosen space, turns translation on there if needed (space admins only), and translates it. You can delete the sample page afterwards.</p>
+
+      <h2 id="open">Step 3 — Open the translation</h2>
+      <ul>
+        <li>Translations are created in the background. A short page takes a few seconds; a long page can take a few minutes. You can leave the page meanwhile.</li>
+        <li>When it is done, the dialog shows <strong>Open</strong> next to each language, and a language label appears under the page title, for example <strong>EN · FR · DE · IT</strong>. Select the label to see every version with its status, then <strong>Open</strong> the one you want. See <a href="/docs/language-switcher/">Language switcher</a>.</li>
+        <li>Each translation is a normal Confluence page, placed <strong>under the original page</strong> in the page tree, with a translated title.</li>
+      </ul>
+
+      <h2 id="next">What next?</h2>
+      <ul>
+        <li>Choose which spaces are translated, and into which languages: <a href="/docs/space-settings/">Space settings</a></li>
+        <li>What is translated, what is not: <a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li>Keep translations up to date: <a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li>Keep product names and key terms consistent: <a href="/docs/glossary/">Glossary</a></li>
+        <li>How much you can translate per month: <a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li>Something doesn't work: <a href="/docs/troubleshooting/">Troubleshooting</a> and <a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

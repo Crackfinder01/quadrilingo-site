@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting – Quadrilingo docs</title>
+<meta name="description" content="Messages and situations you may meet with Quadrilingo, their likely cause and what to do.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/" aria-current="page">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/docs/troubleshooting/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="docs">
+    <nav class="docs-nav" aria-label="Documentation">
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/getting-started/">Getting started</a></li>
+        <li><a href="/docs/space-settings/">Space settings</a></li>
+        <li><a href="/docs/translate-a-page/">Translate a page</a></li>
+        <li><a href="/docs/outdated-translations/">Outdated translations</a></li>
+        <li><a href="/docs/language-switcher/">Language switcher</a></li>
+        <li><a href="/docs/glossary/">Glossary</a></li>
+        <li><a href="/docs/quotas-and-plans/">Quotas and plans</a></li>
+        <li><a href="/docs/troubleshooting/" aria-current="page">Troubleshooting</a></li>
+        <li><a href="/docs/faq/">FAQ</a></li>
+      </ul>
+    </nav>
+    <article class="doc-body">
+      <h1>Troubleshooting</h1>
+      <p>Status words in <strong>bold</strong> and the messages quoted below are taken from the English interface.</p>
+
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">What you see</th><th scope="col">Likely cause</th><th scope="col">What to do</th></tr></thead>
+        <tbody>
+          <tr><td><strong>“Translate this page” is not in the ••• menu</strong></td><td>The app is not installed on this site, or you are on a blog post / whiteboard / database rather than a page, or the page is still a draft.</td><td>Ask a site admin to check <strong>Apps → Manage apps</strong>. Publish the page first.</td></tr>
+          <tr><td><strong>“Translation is not turned on for this space”</strong></td><td>No space admin has enabled translation for this space.</td><td>A space admin can turn it on from the dialog or in <a href="/docs/space-settings/">Space settings</a>.</td></tr>
+          <tr><td><strong>“Only space admins can change these settings”</strong></td><td>You are not a space admin.</td><td>Ask a space admin (listed in <strong>Space settings → Permissions</strong>).</td></tr>
+          <tr><td><strong>Atlassian asks you to “Allow access”</strong></td><td>First use: the app checks your own permissions (read the page, add pages, edit existing translations) before translating, so Atlassian asks for your consent once per person.</td><td>Allow it. Without consent, the app can't check your permissions and won't translate.</td></tr>
+          <tr><td><strong>“You can't add pages in this space”</strong></td><td>Translations are created with your permissions.</td><td>Ask a space admin for “Add pages” permission, or ask a colleague who has it.</td></tr>
+          <tr><td><strong>The translation takes a long time</strong></td><td>Translations run in the background; long pages and several languages take longer. Many translations at once on the site are queued.</td><td>Wait a few minutes and reopen the dialog. After 15 minutes without progress, the language shows <strong>Delayed</strong>: tick it and select <strong>Translate</strong> again. If it happens again, contact support.</td></tr>
+          <tr><td><strong>A language shows “Error”</strong></td><td>The app could not write the page: missing permission, page restrictions, or your organisation's <strong>app access rules</strong> (data security policies) block the app in this space.</td><td>Check restrictions on the original page and the space. An org admin can check app access rules in Atlassian Administration. Then update the translation again.</td></tr>
+          <tr><td><strong>“Quadrilingo does not have “Can edit” on this page…”</strong>, and no language label or menu on the original</td><td>The original is restricted for editing and Quadrilingo does not have <strong>Can edit</strong> on it (<strong>Share</strong> → <strong>Specific access</strong>). Quadrilingo translates it without ever editing it or changing its restrictions. The translation gets the same edit rights (plus Quadrilingo). The language switcher shows on the translations, not on the original.</td><td>Nothing to do: translate as usual. To get the language switcher on the original too, open <strong>Share</strong> on the original, add <strong>Quadrilingo</strong> under <strong>Specific access</strong> with <strong>Can edit</strong> (or ask an admin).</td></tr>
+          <tr><td><strong>“Confluence refused an operation by Quadrilingo on this page.”</strong></td><td>Confluence rejected one of the app's requests on this page or its translation.</td><td>Start the translation again from the original. If the error comes back, contact support.</td></tr>
+          <tr><td><strong>A paragraph is still in the original language</strong></td><td>The app kept the original paragraph because the translation would have broken its formatting (link, mention, code).</td><td>Edit the translated page by hand, or update the translation later. If it happens often on the same kind of content, tell support.</td></tr>
+          <tr><td><strong>The title ends with “(DE)”, “(FR)”…</strong></td><td>A page with the translated title already exists in the space.</td><td>Rename one of the pages if you want. The link between pages is not affected.</td></tr>
+          <tr><td><strong>“Outdated” doesn't appear after I edited the original</strong></td><td>Confluence notifies the app up to about 3 minutes after publishing. Adding or removing a comment does not count as a change. Edits are not tracked without an active subscription, or while translation is turned off for the space. A translation edited by hand shows <strong>Edited by hand</strong> instead.</td><td>Wait 3 minutes and reload. Check that the page you edited is the original, not a translation. Check that the subscription is active and translation is on for the space. The <strong>Translate this page</strong> dialog on the original always shows the real status.</td></tr>
+          <tr><td><strong>A translation shows “Up to date” although the original changed</strong></td><td>The edit was made while translation was turned off for the space, or without an active subscription. Such edits are seen the next time the original is edited.</td><td>Open <strong>Translate this page</strong> on the original: it compares with the current text and shows the real status. Update from there.</td></tr>
+          <tr><td><strong>A translation is “Up to date” again after I restored an old version of the original</strong></td><td>Expected: the restored text is the one this translation was made from.</td><td>Nothing to do. Languages that differ from the restored text stay <strong>Outdated</strong>.</td></tr>
+          <tr><td><strong>Automatic updates don't run</strong></td><td>“Update translations automatically” is off for the space; the update is still in its 10-minute wait; the translation was <strong>Edited by hand</strong> (never overwritten automatically); the language has no translation yet (automatic updates never create pages); the monthly allowance is used up (<strong>Volume used up</strong>); the subscription is inactive; or the option was turned on after the page became outdated (it is then updated at the next edit of the original).</td><td>Check <a href="/docs/space-settings/">Space settings</a> and <a href="/docs/quotas-and-plans/">Quotas and plans</a>. To update now, use <strong>••• → Translate this page</strong> on the original.</td></tr>
+          <tr><td><strong>“This month's translation volume is used up”</strong></td><td>The site used its allowance for this calendar month.</td><td>Existing translations stay readable. You can translate again from the 1st of next month (UTC), or after asking us for a higher allowance. Nothing restarts on its own: start the translation again from <strong>••• → Translate this page</strong>. See <a href="/docs/quotas-and-plans/">Quotas and plans</a>.</td></tr>
+          <tr><td><strong>“Not enough volume left this month”</strong></td><td>This translation could need more characters than are left this month.</td><td>Untick some languages under <strong>Translate into</strong>, or wait until the 1st of next month (UTC).</td></tr>
+          <tr><td><strong>The dialog warns that the page seems to be written in another language</strong></td><td>The page does not look like it is written in the space's <strong>original language</strong>. It would be translated as if it were, which can give a poor result.</td><td>Check the original language in <a href="/docs/space-settings/">Space settings</a>. A space has one original language; it can no longer change once pages are translated.</td></tr>
+          <tr><td><strong>A translation shows “Edited by hand” and is not updated</strong></td><td>Someone edited the translated page directly. The app never overwrites it automatically, and the dialog leaves it unticked.</td><td>To replace it: on the original, open <strong>Translate this page</strong>, tick that language, tick <strong>“Also replace translations that were edited by hand”</strong>, then <strong>Translate</strong>. Copy any manual change you want to keep first. Consider adding the term to the <a href="/docs/glossary/">Glossary</a>.</td></tr>
+          <tr><td><strong>A language shows “Not available” in the language menu</strong></td><td>A version exists but you cannot open it: page restrictions, or the page was trashed or deleted.</td><td>Ask the page owner for access. If the page was deleted, update that language from the original.</td></tr>
+          <tr><td><strong>The language list doesn't show on my phone</strong></td><td>The Confluence mobile apps may not display the app's language list.</td><td>Open translations from the page tree (they are child pages of the original) or from search.</td></tr>
+          <tr><td><strong>I moved a translation and it is no longer updated</strong></td><td>A translation must stay under its original page.</td><td>Move it back under the original page (the dialog says so).</td></tr>
+          <tr><td><strong>I restored a translation from the trash and the language now has two pages, or the menu says “This page is not linked to other languages.”</strong></td><td>Once the app has seen a translation as gone, it stops linking to it; the next translation into that language creates a new page. A page restored from the trash afterwards is not linked again.</td><td>Delete the extra page. If no new page was created yet, translate that language again from the original: a new linked page is created and the restored page stays unlinked. A page restored before any translation or update ran is not affected.</td></tr>
+          <tr><td><strong>I copied a page and the language menu says “This page is not linked to other languages.”</strong></td><td>The copy carried the link information of the page it was copied from, but the app only trusts links that match in both directions.</td><td>The copy is not linked to the original's translations. If you need the copy in other languages, contact support.</td></tr>
+          <tr><td><strong>I changed the glossary but existing translations did not change</strong></td><td>Expected: a glossary change applies to the next translations and updates only. Nothing is re-translated automatically.</td><td>Update the pages that matter from <strong>••• → Translate this page</strong>, or let them pick up the glossary at their next change. See <a href="/docs/glossary/">Glossary</a>.</td></tr>
+          <tr><td><strong>I can't see the glossary</strong></td><td>Only space admins can see and change it.</td><td>Ask a space admin.</td></tr>
+          <tr><td><strong>The glossary screen shows “short acronym”</strong></td><td>A required translation contains a short acronym (such as AI → IV). It will be replaced wherever it appears, whatever it means.</td><td>Keep the row only if the acronym has a single meaning in this space's pages. The warning does not block saving.</td></tr>
+          <tr><td><strong>“The space glossary could not be applied to this translation.”</strong></td><td>The translation service could not use the glossary for this translation, which was made without it.</td><td>Run the translation again later from <strong>Translate this page</strong>.</td></tr>
+          <tr><td><strong>Watchers get notifications for every update</strong></td><td>Updating a translated page is a normal page edit in Confluence.</td><td>Turn off automatic updates for busy spaces, or ask watchers to unwatch translations.</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2 id="contacting-support">Contacting support</h2>
+      <p>Write to <a href="mailto:support@quadrilingo.com">support@quadrilingo.com</a> in English, French or German. To help us, include:</p>
+      <ul>
+        <li>your site URL (<code>https://yourcompany.atlassian.net</code>);</li>
+        <li>the page ID or link, the languages involved, and the approximate time;</li>
+        <li>what you expected and what you saw (a screenshot helps).</li>
+      </ul>
+      <p>You <strong>don't</strong> need to send us the page content. We never ask for your Atlassian password or an API token.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>
