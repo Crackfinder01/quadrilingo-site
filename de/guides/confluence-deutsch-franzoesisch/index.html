@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confluence auf Deutsch und Französisch: Leitfaden für Teams</title>
+<meta name="description" content="Wie Schweizer Teams ein Confluence-Wiki auf Deutsch, Französisch und Italienisch organisieren: Originalsprache, Struktur, Glossar, Tonfall und Aktualität.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/de/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Hauptmenü">
+      <ul>
+        <li><a href="/de/#funktionen">Funktionen</a></li>
+        <li><a href="/de/#preise">Preise</a></li>
+        <li><a href="/docs/" hreflang="en">Dokumentation (EN)</a></li>
+        <li><a href="/support/" hreflang="en">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Sprache">
+      <a href="/" lang="en" hreflang="en">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/guides/confluence-deutsch-franzoesisch/" lang="de" hreflang="de" aria-current="page">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="doc-body">
+    <p class="small"><a href="/guides/">Guides</a></p>
+    <h1>Confluence auf Deutsch und Französisch: So organisieren Schweizer Teams ein mehrsprachiges Wiki</h1>
+    <p class="updated">Aktualisiert am 23. November 2026</p>
+    <p class="lead">In vielen Schweizer Unternehmen ist das Wiki zweisprachig, ohne dass es je jemand so geplant hat. Die IT schreibt auf Deutsch, das Team in Genf auf Französisch, die Geschäftsleitung möchte Englisch, und das Tessin liest mit. Das Ergebnis: doppelte Seiten, veraltete Kopien und Begriffe, die in jeder Sprache anders heissen.</p>
+    <p>Confluence Cloud kennt keine Sprachversionen von Seiten; der entsprechende Wunsch (CONFCLOUD-64788) ist seit 2018 offen. Ein mehrsprachiges Wiki ist deshalb vor allem eine Frage der Organisation. Dieser Leitfaden zeigt die sieben Entscheide, die Sie vor dem ersten Übersetzen treffen sollten.</p>
+    <p class="note"><em>Offenlegung: Dieser Artikel stammt vom Entwickler von Quadrilingo, einer App für mehrsprachige Confluence-Seiten, entwickelt in der Schweiz. Die sieben Entscheide gelten unabhängig vom Werkzeug.</em></p>
+
+    <h2 id="sieben-entscheide">Sieben Entscheide, bevor Sie übersetzen</h2>
+
+    <h3>1. Eine Originalsprache pro Bereich</h3>
+    <p>Legen Sie für jeden Bereich fest, in welcher Sprache geschrieben wird. Das HR-Handbuch entsteht vielleicht auf Französisch, die IT-Dokumentation auf Deutsch. Übersetzungen werden aus dem Original erstellt, nie umgekehrt.</p>
+    <p>Warum so streng? Wird dieselbe Seite in zwei Sprachen parallel bearbeitet, weiss niemand mehr, welche Fassung gilt. Kein Werkzeug löst diesen Konflikt sauber.</p>
+
+    <h3>2. Was übersetzt wird (und was nicht)</h3>
+    <p>Nicht alles braucht drei Sprachen. Bewährt hat sich:</p>
+    <ul>
+      <li><strong>Immer:</strong> Weisungen, Reglemente, Onboarding, Sicherheitsanweisungen, Anleitungen für alle Mitarbeitenden.</li>
+      <li><strong>Bei Bedarf:</strong> Projektseiten, an denen Teams aus mehreren Regionen arbeiten.</li>
+      <li><strong>Selten:</strong> Sitzungsprotokolle, Entwürfe, persönliche Notizen.</li>
+    </ul>
+    <p>Beginnen Sie mit den 20 meistgelesenen Seiten. Die Seitenstatistiken von Confluence helfen bei der Auswahl, sofern Ihr Plan sie anbietet.</p>
+
+    <h3>3. Struktur: Bereich pro Sprache oder Seiten unter dem Original</h3>
+    <p>Zwei Modelle sind verbreitet:</p>
+    <ul>
+      <li><strong>Ein Bereich pro Sprache</strong> («Handbuch DE», «Manuel FR»): übersichtlich für Teams, die nur eine Sprache lesen. Nachteil: Nichts verbindet eine Seite mit ihrer Übersetzung.</li>
+      <li><strong>Übersetzungen als Unterseiten des Originals:</strong> Original und Übersetzungen liegen beieinander, Berechtigungen und Suche funktionieren wie gewohnt. Nachteil: Der Seitenbaum wächst mit jeder Sprache.</li>
+    </ul>
+    <p>Wählen Sie ein Modell pro Bereich und schreiben Sie es auf der Startseite des Bereichs auf.</p>
+
+    <h3>4. Titel und Auffindbarkeit</h3>
+    <p>Übersetzen Sie auch die Titel. Wer «Ferien beantragen» sucht, findet sonst die französische Seite «Demande de vacances» nicht über ihren Titel. Wenn zwei Seiten denselben Titel hätten, hilft ein Sprachkürzel: «Onboarding (FR)».</p>
+
+    <h3>5. Glossar mit Schweizer Begriffen</h3>
+    <p>Jedes Unternehmen hat Begriffe, die falsch übersetzt werden: «Pikett» (service de piquet, servizio di picchetto), «Traktandum», «AHV» (AVS auf Französisch und Italienisch), «Ferien» statt «Urlaub», Produkt- und Teamnamen. Eine Liste mit 20 bis 50 Einträgen, vierspaltig (DE, FR, IT, EN), verhindert die meisten Rückfragen. Legen Sie auch fest, welche Namen nie übersetzt werden.</p>
+    <p>Achtung bei kurzen Abkürzungen: «IV» ist auf Französisch «AI», aber «AI» heisst auch «Artificial Intelligence». Eine Abkürzung gehört nur ins Glossar, wenn sie im Bereich eine einzige Bedeutung hat.</p>
+
+    <h3>6. Tonfall und Schreibweise</h3>
+    <ul>
+      <li><strong>Anrede:</strong> «Sie» und «vous» oder «du» und «tu»? Einmal entscheiden, für alle Sprachen.</li>
+      <li><strong>ss statt ß:</strong> In der Schweiz schreibt man «gross», «Strasse», «heisst». Maschinelle Übersetzungen ins Deutsche liefern oft «ß», wenn sie nicht ausdrücklich auf Schweizer Schreibweise eingestellt sind.</li>
+      <li><strong>Französisch:</strong> Schweizer Zahlwörter wie «septante» und «nonante» kommen in Fliesstext vor; entscheiden Sie, ob Sie sie verwenden.</li>
+    </ul>
+
+    <h3>7. Wer ist zuständig, wenn sich das Original ändert</h3>
+    <p>Die meisten mehrsprachigen Wikis scheitern nicht an der ersten Übersetzung, sondern an der zehnten Änderung. Legen Sie fest:</p>
+    <ul>
+      <li>wer merkt, dass sich ein Original geändert hat (Beobachten der Seite, Labels, ein Werkzeug);</li>
+      <li>wer die Übersetzung nachführt, und innert welcher Frist;</li>
+      <li>was mit Korrekturen passiert, die jemand direkt in der Übersetzung gemacht hat.</li>
+    </ul>
+    <p>Ein einfacher Hinweis oben auf jeder Übersetzung hilft: «Übersetzung von [Original], Stand Version 12, 3. November 2026».</p>
+
+    <h2 id="datenschutz">Datenschutz: eine Frage vor dem ersten Klick</h2>
+    <p>Maschinelle Übersetzung bedeutet: Der Text einer Seite geht an einen Übersetzungsdienst. Klären Sie mit Ihrer Datenschutz- oder IT-Verantwortlichen, welche Seiten dafür in Frage kommen und welcher Dienst eingesetzt werden darf. Lesen Sie bei jedem Werkzeug die Datenschutzangaben, die Liste der Unterauftragsverarbeiter und die Länder, in denen Daten verarbeitet werden. Seiten mit Personendaten aus dem HR-Bereich verdienen besondere Vorsicht.</p>
+
+    <h2 id="start">Ein realistischer Start in vier Wochen</h2>
+    <ol>
+      <li><strong>Woche 1:</strong> Originalsprache pro Bereich festlegen, Struktur wählen, Glossar mit den 20 wichtigsten Begriffen.</li>
+      <li><strong>Woche 2:</strong> die 10 wichtigsten Seiten übersetzen, von muttersprachlichen Kolleginnen gegenlesen lassen.</li>
+      <li><strong>Woche 3:</strong> Rückmeldungen ins Glossar übernehmen, die nächsten 10 Seiten.</li>
+      <li><strong>Woche 4:</strong> Zuständigkeiten für Änderungen festhalten und auf der Startseite des Bereichs dokumentieren.</li>
+    </ol>
+
+    <h2 id="unsere-app">Wie unsere App dabei hilft – und wo nicht</h2>
+    <p>Wir haben Quadrilingo für genau diese Situation gebaut: Deutsch, Französisch, Italienisch und Englisch, Übersetzungen als Unterseiten des Originals (das zweite Modell aus Entscheid 3).</p>
+    <ul>
+      <li><strong>Pro Bereich</strong> wählen Bereichsadministratoren die Originalsprache, die Zielsprachen, «ss» statt «ß» und den Tonfall (standardmässig «Sie», «vous», «Lei»).</li>
+      <li><strong>Ein Glossar pro Bereich</strong> mit Namen, die nie übersetzt werden, und vorgegebenen Übersetzungen pro Sprache, mit einer Spalte «Schweizer Hochdeutsch». Bei kurzen Abkürzungen warnt der Bildschirm.</li>
+      <li><strong>Titel werden übersetzt.</strong> Gibt es den Titel im Bereich schon, wird ein Sprachkürzel angehängt, zum Beispiel «Onboarding (DE)».</li>
+      <li><strong>Änderungen am Original</strong> markieren die Übersetzungen nach wenigen Minuten als <strong>«Veraltet»</strong>. Aktualisiert wird über das Seitenmenü oder automatisch, wenn ein Bereichsadministrator das einschaltet (aktives Abo oder Testphase nötig).</li>
+      <li><strong>Korrekturen von Hand</strong> bleiben erhalten: Die Übersetzung erscheint als <strong>«Von Hand geändert»</strong> und wird nie automatisch überschrieben.</li>
+      <li><strong>Übersetzung im Abo enthalten,</strong> ohne API-Schlüssel und ohne eigenes Konto bei einem Übersetzungsdienst. Welche Daten wohin gehen, steht in unserer <a href="/de/privacy/">Datenschutzerklärung</a> und im Tab «Privacy &amp; Security» des Marketplace-Eintrags.</li>
+    </ul>
+    <p>Was sie nicht kann: einen Bereich pro Sprache verwalten, alle Sprachen auf einer Seite zeigen, einen Freigabe-Workflow abbilden oder einen ganzen Bereich auf einmal übersetzen. Ein Bereich hat eine einzige Deutsch-Variante, Standard oder Schweiz. Dokumentation (auf Englisch): <a href="/docs/" hreflang="en">quadrilingo.com/docs</a></p>
+
+    <h2 id="quellen">Quellen</h2>
+    <ul class="small">
+      <li>Atlassian, <a href="https://jira.atlassian.com/browse/CONFCLOUD-64788">CONFCLOUD-64788 — Support multiple page versions per language</a> (abgerufen am 23.11.2026)</li>
+      <li>Atlassian Community, <a href="https://community.atlassian.com/forums/Confluence-questions/How-do-I-manage-pages-with-content-in-multiple-languages/qaq-p/2935826">How do I manage pages with content in multiple languages?</a> (Erfahrungen mit einem Bereich pro Sprache)</li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Rechtliches">
+      <ul>
+        <li><a href="/de/privacy/">Datenschutz</a></li>
+        <li><a href="/terms/" hreflang="en">Nutzungsbedingungen (EN)</a></li>
+        <li><a href="/security/" hreflang="en">Sicherheit (EN)</a></li>
+        <li><a href="/support/" hreflang="en">Support (EN)</a></li>
+        <li><a href="/guides/">Guides</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo ist eine unabhängige App und steht in keiner Verbindung zu Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Traduire Confluence : pages, Rovo et outils (guide 2026)</title>
+<meta name="description" content="Interface en français ou pages en plusieurs langues ? Les 5 façons de traduire Confluence Cloud en 2026 : navigateur, copier-coller, Rovo, apps, traduction humaine.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/fr/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="/fr/#fonctions">Fonctions</a></li>
+        <li><a href="/fr/#prix">Prix</a></li>
+        <li><a href="/docs/" hreflang="en">Documentation (EN)</a></li>
+        <li><a href="/support/" hreflang="en">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Langue">
+      <a href="/" lang="en" hreflang="en">EN</a>
+      <a href="/fr/guides/traduire-confluence/" lang="fr" hreflang="fr" aria-current="page">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="doc-body">
+    <p class="small"><a href="/guides/">Guides</a></p>
+    <h1>Traduire Confluence : 5 façons de traduire vos pages (et de garder les traductions à jour)</h1>
+    <p class="updated">Mis à jour le 23 novembre 2026</p>
+    <p class="lead">Votre équipe rédige en allemand, une partie de vos collègues lit en français, et la direction veut tout en anglais. Confluence Cloud n'a pas de bouton « traduire cette page » intégré à toutes les offres, ni de notion de « version française d'une page ». Voici les cinq façons de s'en sortir en 2026, avec leurs avantages et leurs limites.</p>
+    <p class="note"><em>Transparence : cet article est écrit par le développeur de Quadrilingo, une app du Marketplace Atlassian pour les pages Confluence multilingues. Nous décrivons aussi les solutions qui ne demandent aucune app.</em></p>
+
+    <h2 id="interface-ou-contenu">D'abord : traduire l'interface ou le contenu ?</h2>
+    <p>Ce sont deux choses différentes.</p>
+    <ul>
+      <li><strong>L'interface</strong> (menus, boutons, messages) : chaque personne choisit sa langue dans ses paramètres personnels de Confluence. C'est gratuit, immédiat, et ça ne change <strong>rien</strong> au contenu des pages.</li>
+      <li><strong>Le contenu</strong> (le texte que vos équipes écrivent) : Confluence ne sait pas qu'une page est la traduction d'une autre. La demande officielle pour des versions de page par langue (CONFCLOUD-64788) est ouverte depuis octobre 2018 ; en novembre 2026, elle compte 178 votes et reste au statut « Gathering Interest ».</li>
+    </ul>
+    <p>Si vous cherchiez seulement « Confluence en français », le premier point suffit. Pour le contenu, lisez la suite.</p>
+
+    <h2 id="navigateur">1. Le traducteur du navigateur</h2>
+    <p>Le plus simple : la traduction intégrée de votre navigateur traduit la page affichée.</p>
+    <ul>
+      <li><strong>Avantages :</strong> gratuit, aucune installation, utile pour comprendre une page ponctuellement.</li>
+      <li><strong>Limites :</strong> la traduction n'est enregistrée nulle part ; chaque lecteur la refait. Elle ne traduit pas le contenu des apps affiché dans des cadres isolés (macros d'apps tierces), un comportement de la plateforme décrit dans la demande CONFCLOUD-83563. Et le texte part vers le service de traduction du navigateur, ce que votre politique de données n'autorise peut-être pas.</li>
+    </ul>
+
+    <h2 id="copier-coller">2. Copier-coller dans un outil de traduction</h2>
+    <p>On copie le texte, on le colle dans un outil de traduction, puis on recolle le résultat dans une nouvelle page.</p>
+    <ul>
+      <li><strong>Avantages :</strong> on obtient une vraie page traduite, que l'on peut relire et corriger.</li>
+      <li><strong>Limites :</strong> la mise en forme souffre (tableaux, encadrés, mentions, liens). Un utilisateur sur la Community Atlassian signale aussi qu'un export Word puis réimport perd les encadrés d'information. Surtout, la page traduite n'est liée à rien : quand l'original change, personne ne le voit.</li>
+    </ul>
+
+    <h2 id="rovo">3. Rovo, si votre offre l'inclut</h2>
+    <p>Atlassian inclut Rovo dans les offres Standard, Premium et Enterprise (pas dans l'offre Free), avec une enveloppe mensuelle de crédits Rovo. Côté traduction :</p>
+    <ul>
+      <li>Atlassian documente des <strong>invites de traduction</strong>, en bêta, pour 23 langues dont le français, l'allemand, l'italien et l'anglais. Atlassian recommande lui-même de relire le résultat avant publication.</li>
+      <li>L'agent <strong>Global Translator</strong> traduit pendant la rédaction. Publier une page avec l'étiquette « translation » lui fait créer une <strong>page enfant traduite</strong>.</li>
+      <li>Une utilisatrice de la Community décrit une autre méthode : sélectionner le texte, choisir <strong>Ask Rovo</strong>, puis l'option de traduction. Selon elle, la mise en forme est conservée.</li>
+    </ul>
+    <p><strong>Limites :</strong> les points d'entrée ont changé pendant le déploiement (un fil Community le montre), donc vérifiez ce que votre site propose aujourd'hui. Et la description d'Atlassian ne parle ni de garder les versions liées, ni de signaler une traduction quand l'original change, ni de glossaire.</p>
+    <p>Pour quelques pages par an, Rovo suffit souvent.</p>
+
+    <h2 id="apps">4. Les apps du Marketplace</h2>
+    <p>Le Marketplace Atlassian propose plusieurs familles d'apps (cherchez « translation ») :</p>
+    <ul>
+      <li><strong>Toutes les langues sur une seule page :</strong> chaque langue dans sa section, le lecteur voit la sienne. Une seule URL, mais une rédaction plus lourde à chaque langue ajoutée.</li>
+      <li><strong>Traduction automatique avec votre propre compte de traduction :</strong> l'app se connecte à un service de traduction ; vous ouvrez le compte, gérez la clé API et le contrat.</li>
+      <li><strong>Flux pour traducteurs professionnels :</strong> export de fichiers (souvent XLIFF) vers des traducteurs, puis réimport.</li>
+      <li><strong>Traduction incluse :</strong> l'éditeur de l'app fournit la traduction dans l'abonnement.</li>
+    </ul>
+    <p>Questions à poser avant de choisir : l'app détecte-t-elle les changements de l'original ? Respecte-t-elle les corrections faites à la main ? Où part le texte, et sous quel contrat ? Les traductions restent-elles des pages normales si vous désinstallez ?</p>
+
+    <h2 id="humaine">5. La traduction humaine</h2>
+    <p>Pour un contrat, un règlement interne, une communication aux clients : un traducteur ou une collègue de langue maternelle. C'est la meilleure qualité, mais aussi la plus chère et la plus lente. Une bonne pratique courante : traduction automatique pour le brouillon, relecture humaine pour les pages sensibles.</p>
+
+    <h2 id="recapitulatif">Récapitulatif</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Méthode</th><th scope="col">Coût</th><th scope="col">Page enregistrée</th><th scope="col">Mise en forme</th><th scope="col">Suit les changements</th></tr></thead>
+        <tbody>
+          <tr><td>Navigateur</td><td>gratuit</td><td>non</td><td>variable</td><td>non</td></tr>
+          <tr><td>Copier-coller</td><td>gratuit ou outil</td><td>oui</td><td>souvent abîmée</td><td>non</td></tr>
+          <tr><td>Rovo</td><td>inclus si votre offre l'inclut</td><td>oui</td><td>à vérifier</td><td>non décrit par Atlassian</td></tr>
+          <tr><td>Apps</td><td>selon l'app</td><td>selon l'app</td><td>selon l'app</td><td>selon l'app</td></tr>
+          <tr><td>Humaine</td><td>élevé</td><td>oui</td><td>soignée</td><td>à organiser</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="suisse">Trois détails qui comptent en Suisse romande et ailleurs</h2>
+    <ul>
+      <li><strong>Vous ou tu :</strong> décidez une fois pour tout le wiki, et vérifiez que l'outil respecte ce choix.</li>
+      <li><strong>Allemand de Suisse :</strong> en Suisse, on écrit « ss » et non « ß ». Une traduction allemande « standard » contiendra des « ß » qu'il faudra corriger.</li>
+      <li><strong>Vocabulaire maison :</strong> AVS et AHV, service de piquet et Pikett, vacances et Ferien. Sans glossaire, chaque page peut traduire ces termes différemment.</li>
+    </ul>
+
+    <h2 id="apres">Après la traduction : le vrai travail</h2>
+    <p>Traduire prend quelques minutes. Le problème arrive trois semaines plus tard : l'original change, la traduction non. Notez sur chaque traduction de quelle version de l'original elle part, suivez (« watch ») les pages d'origine, et comparez les versions dans l'historique avant de mettre à jour. Notre guide <a href="/guides/keep-confluence-translations-up-to-date/" hreflang="en">Keep translated Confluence pages up to date</a> (en anglais) détaille cette méthode.</p>
+
+    <h2 id="notre-app">Notre app, et ses limites</h2>
+    <p>Nous avons conçu Quadrilingo pour les équipes qui travaillent en français, allemand, italien et anglais :</p>
+    <ul>
+      <li>depuis le menu <strong>••• → Translate this page</strong>, chaque traduction devient une vraie page Confluence sous l'original, avec un titre traduit ;</li>
+      <li>quand le contenu de l'original change, ses traductions passent <strong>« À mettre à jour »</strong> en quelques minutes ; vous les mettez à jour depuis le menu de la page, ou automatiquement si un administrateur de l'espace l'active (abonnement ou essai actif nécessaire) ;</li>
+      <li>une traduction corrigée à la main passe <strong>« Modifiée à la main »</strong> et n'est jamais écrasée automatiquement ;</li>
+      <li>un glossaire par espace, une option allemand de Suisse et le vouvoiement par défaut ;</li>
+      <li>la traduction est incluse dans l'abonnement : pas de clé API ni de compte de traduction à ouvrir.</li>
+    </ul>
+    <p>Ce qu'elle ne fait pas : d'autres langues, toutes les langues sur une seule page, un circuit de relecture humaine, la traduction d'un espace entier d'un coup. Documentation (en anglais) : <a href="/docs/" hreflang="en">quadrilingo.com/docs</a></p>
+
+    <h2 id="sources">Sources</h2>
+    <ul class="small">
+      <li>Atlassian, <a href="https://jira.atlassian.com/browse/CONFCLOUD-64788">CONFCLOUD-64788</a> (consulté le 23/11/2026)</li>
+      <li>Atlassian, <a href="https://jira.atlassian.com/browse/CONFCLOUD-83563">CONFCLOUD-83563</a> (traduction du navigateur et contenu des apps ; consulté le 23/11/2026)</li>
+      <li>Atlassian, <a href="https://www.atlassian.com/licensing/rovo">Rovo licensing</a> (offres incluant Rovo, crédits ; consulté le 23/11/2026)</li>
+      <li>Atlassian Support, <a href="https://support.atlassian.com/confluence-cloud/docs/learn-about-pre-defined-prompts-in-atlassian-intelligence/">Pre-defined prompts</a> (invites de traduction, bêta ; consulté le 23/11/2026)</li>
+      <li>Atlassian, <a href="https://www.atlassian.com/fr/software/rovo/use-cases/global-translator">Global Translator</a> (consulté le 23/11/2026)</li>
+      <li>Atlassian Community, <a href="https://community.atlassian.com/forums/Rovo-questions/Rovo-Translation-Tool-Still-Supported/qaq-p/3141865">Rovo Translation Tool – Still Supported?</a></li>
+      <li>Atlassian Community, <a href="https://community.atlassian.com/forums/Confluence-questions/Does-Confluence-cloud-support-for-translation-of-content/qaq-p/2346170">Does Confluence cloud support for translation of content?</a> (export Word)</li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Informations légales">
+      <ul>
+        <li><a href="/fr/privacy/">Confidentialité</a></li>
+        <li><a href="/terms/" hreflang="en">Conditions (EN)</a></li>
+        <li><a href="/security/" hreflang="en">Sécurité (EN)</a></li>
+        <li><a href="/support/" hreflang="en">Support (EN)</a></li>
+        <li><a href="/guides/">Guides</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo est une app indépendante, sans lien avec Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keep translated Confluence pages up to date (2026 guide)</title>
+<meta name="description" content="Translations in Confluence drift as soon as the original changes. A practical method to link versions, spot outdated pages and update them, with or without an app.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/guides/keep-confluence-translations-up-to-date/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="doc-body">
+    <p class="small"><a href="/guides/">Guides</a></p>
+    <h1>How to keep translated Confluence pages up to date</h1>
+    <p class="updated">Updated 23 November 2026</p>
+    <p class="lead">Translating a Confluence page takes minutes. Keeping that translation correct for the next two years is the real work. A new phone number, a changed deadline, one extra step in a procedure: these small edits are exactly the ones readers of the other language miss.</p>
+    <p>This guide gives you a method that works with plain Confluence, shows where Rovo helps, and lists what to check if you consider an app.</p>
+    <p class="note"><em>Disclosure: this article is written by the developer of Quadrilingo, a Marketplace app that tracks and updates translated Confluence pages. The manual method below works without it.</em></p>
+
+    <h2 id="why">Why translations drift</h2>
+    <ul>
+      <li><strong>Nothing links the versions.</strong> Confluence has no notion of “the German version of this page”. The request for it (CONFCLOUD-64788) has been open since 2018.</li>
+      <li><strong>The author doesn't see the other languages.</strong> The person editing the English original often doesn't know a French copy exists.</li>
+      <li><strong>Small edits are invisible.</strong> Nobody re-translates a page for one changed sentence, until that sentence is the one that matters.</li>
+      <li><strong>Hand corrections get lost.</strong> Someone fixes a clumsy phrase in the translation; the next full re-translation erases the fix.</li>
+    </ul>
+
+    <h2 id="three-things">The three things you need</h2>
+    <ol>
+      <li><strong>A link:</strong> for each translation, which page is its original, and which version of the original it was made from.</li>
+      <li><strong>A signal:</strong> something that tells you “the original changed since this translation”.</li>
+      <li><strong>An update path:</strong> a way to bring the translation back in line without losing manual corrections.</li>
+    </ol>
+    <p>Every method, manual or automated, is a way to provide these three.</p>
+
+    <h2 id="manual">A manual method with plain Confluence</h2>
+    <p><strong>Step 1: write the link on each translation.</strong> At the top of the translated page, add a short info panel: “Translation of [link to the original]. Based on version 14 of the original, 3 Nov 2026.” The page history of the original shows its version numbers.</p>
+    <p><strong>Step 2: label translations.</strong> Add a label such as <code>translation</code> and one per language (<code>lang-fr</code>, <code>lang-de</code>). Labels make translations easy to list and to filter in search.</p>
+    <p><strong>Step 3: watch the originals.</strong> The person responsible for a translation watches the original page, so Confluence notifies them when it's edited.</p>
+    <p><strong>Step 4: compare versions, update only what changed.</strong> When notified, open the original's page history and compare the version written in the panel with the current one. Update the matching paragraphs in the translation, then change the version number in the panel.</p>
+    <p><strong>Step 5: keep an overview.</strong> A simple table on a “Translations” page (original, language, version, owner), or the Page Properties and Page Properties Report macros, shows at a glance what may be behind.</p>
+    <p>If your plan includes Confluence automation, check whether a rule triggered by a page edit can add a label such as <code>translation-outdated</code> or notify the owner. What is available depends on your plan, so test it on one page first.</p>
+    <p><strong>Limits.</strong> This works for a few dozen pages and a disciplined team. It depends on people reading notifications, and on everyone respecting the convention. Beyond that, the overview table becomes the thing that is out of date.</p>
+
+    <h2 id="rovo">Using Rovo for the changed parts</h2>
+    <p>If your plan includes Rovo, you don't need to re-translate the whole page. Select the changed paragraphs in the original, ask Rovo to translate them, and paste the result into the translation. In an Atlassian Community thread, one user reports that this route (select the text, <strong>Ask Rovo</strong>, then the translate option) keeps the formatting, while a prompt-based attempt lost it. Check the result before you publish.</p>
+    <p>Two cautions:</p>
+    <ul>
+      <li>Re-translating the whole page overwrites any correction made by hand in the translation. Translate only what changed.</li>
+      <li>Atlassian's description of its Global Translator agent doesn't mention a glossary. Name your key terms in the prompt (“translate ‘Pikett’ as ‘service de piquet’”), and check product names.</li>
+    </ul>
+
+    <h2 id="rules">Rules that save time</h2>
+    <ul>
+      <li><strong>Edit the original, not the translations.</strong> If someone spots an error in a translation that comes from the source, fix the source. Reserve direct edits of translations for wording.</li>
+      <li><strong>Protect hand corrections.</strong> Note in the panel “reviewed by Anna, 5 Nov” so nobody replaces a reviewed text blindly.</li>
+      <li><strong>Put recurring fixes in a glossary.</strong> If you correct the same term every time, it belongs in a shared list, not in repeated edits.</li>
+      <li><strong>Wait until a page is stable.</strong> For a page edited ten times a day during a project, update the translations once the edits calm down.</li>
+      <li><strong>Agree on what counts as a change.</strong> A typo fix in the original doesn't need the same urgency as a new deadline.</li>
+    </ul>
+
+    <h2 id="evaluate">What to check when you evaluate an app</h2>
+    <p>Marketplace apps take different approaches. Some flag outdated translations and let you update them; some update automatically; some re-translate only the paragraphs that changed; some require your own account with a translation provider. Six questions help:</p>
+    <ol>
+      <li>Does it <strong>detect changes on its own</strong>, or must someone press a button to find out?</li>
+      <li>Does it <strong>keep manual corrections</strong>, or overwrite them on the next update?</li>
+      <li>Does it <strong>re-translate only what changed</strong>? That affects both quality and cost.</li>
+      <li><strong>Where is the text sent</strong> for translation, and under which contract?</li>
+      <li>Do translations <strong>follow your page permissions</strong>?</li>
+      <li>If you uninstall, do translations <strong>stay as normal pages</strong>?</li>
+    </ol>
+
+    <h2 id="our-app">How our app handles it</h2>
+    <p>We built Quadrilingo around the three needs above, for English, French, German and Italian.</p>
+    <ul>
+      <li><strong>Link:</strong> each translation is a child page of its original. The app records its language and the version of the original it was made from.</li>
+      <li><strong>Signal:</strong> a few minutes after the original's content changes, its translations are marked <strong>Outdated</strong>, in the label under the title, in the language menu and in the <strong>Translate this page</strong> dialog. Comments don't count. Restoring the version a translation was made from makes it <strong>Up to date</strong> again.</li>
+      <li><strong>Update path:</strong> on the original, <strong>••• → Translate this page</strong> opens with the outdated languages already ticked. Or a space admin turns on “Update translations automatically”: about 10 minutes after the original changes, existing translations are updated. Automatic updates never create new pages.</li>
+      <li><strong>Hand corrections:</strong> a translation edited directly shows <strong>Edited by hand</strong> and is never overwritten automatically. It's replaced only if someone explicitly chooses to.</li>
+      <li><strong>Only what changed:</strong> unchanged passages are reused and don't count against the monthly translation volume.</li>
+      <li><strong>Glossary:</strong> per space, with a Swiss Standard German column. Changing it doesn't re-translate anything by itself; it applies to the next translations and updates.</li>
+    </ul>
+    <p>Outdated tracking and automatic updates need an active subscription or trial. Documentation: <a href="/docs/outdated-translations/">Outdated translations</a></p>
+
+    <h2 id="sources">Sources</h2>
+    <ul class="small">
+      <li>Atlassian, <a href="https://jira.atlassian.com/browse/CONFCLOUD-64788">CONFCLOUD-64788</a> (viewed 23 Nov 2026)</li>
+      <li>Atlassian, <a href="https://www.atlassian.com/software/rovo/use-cases/global-translator">Rovo use case: Global Translator</a> (viewed 23 Nov 2026)</li>
+      <li>Atlassian Community, <a href="https://community.atlassian.com/forums/Rovo-questions/Rovo-Translation-Tool-Still-Supported/qaq-p/3141865">Rovo Translation Tool – Still Supported?</a> (workaround: select text, Ask Rovo, translate)</li>
+      <li>Atlassian Community, <a href="https://community.atlassian.com/forums/Confluence-questions/Suggestion-Bidirectional-page-synchronization/qaa-p/3226339">Suggestion: Bidirectional page synchronization</a></li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+        <li><a href="/guides/">Guides</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confluence pages in multiple languages: options (2026)</title>
+<meta name="description" content="Confluence Cloud has no built-in language versions. Compare your options in 2026: Rovo, separate spaces, linked pages, one page per language, apps.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="/guides/confluence-multilingual-pages/" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="doc-body">
+    <p class="small"><a href="/guides/">Guides</a></p>
+    <h1>Confluence pages in multiple languages: your options in Confluence Cloud (2026)</h1>
+    <p class="updated">Updated 23 November 2026</p>
+    <p class="lead">If your team writes Confluence pages in one language and colleagues read them in another, you have probably looked for a “language” setting on pages. There isn't one. This guide explains what Confluence Cloud does on its own, the four ways teams organise multilingual content, where Rovo fits, and how to choose an approach you can still maintain in a year.</p>
+    <p class="note"><em>Disclosure: this article is written by the developer of Quadrilingo, a Marketplace app for multilingual Confluence pages. We describe the other approaches as fairly as we can, including the cases where you don't need an app at all.</em></p>
+
+    <h2 id="native">What Confluence Cloud does natively</h2>
+    <p>Two things are often confused.</p>
+    <ul>
+      <li><strong>The interface language.</strong> Each person can choose the language of Confluence's menus and buttons in their personal settings. This changes the interface only, never the content of pages.</li>
+      <li><strong>The content language.</strong> Confluence has no concept of “this page is the French version of that page”. The suggestion asking for multiple page versions per language, CONFCLOUD-64788, has been open since October 2018. In November 2026 it shows 178 votes and the status “Gathering Interest”.</li>
+    </ul>
+    <p>So every multilingual setup is a convention you build yourself: with the page structure, with an AI assistant, with an app, or with a mix of these.</p>
+
+    <h2 id="four-ways">Four ways to organise multilingual content</h2>
+
+    <h3>1. One space per language</h3>
+    <p>For example, an “HR Handbook (EN)” space and a “Manuel RH (FR)” space.</p>
+    <ul>
+      <li><strong>Good for:</strong> teams that mostly work in one language each, or content that differs by country anyway (local law, local benefits).</li>
+      <li><strong>Watch out for:</strong> nothing links a page to its counterpart. Readers can't easily switch, and nobody sees when the French page is behind the English one. Search returns results from both spaces unless people filter.</li>
+    </ul>
+
+    <h3>2. Translated pages linked to the original</h3>
+    <p>Each translation is a separate page, often a child or a sibling of the original, with a translated title.</p>
+    <ul>
+      <li><strong>Good for:</strong> documentation where every language needs a complete page that is searchable, exportable and covered by normal Confluence permissions.</li>
+      <li><strong>Watch out for:</strong> the page tree grows with each language, and you need a reliable way to know which translations are outdated. Done by hand, this means a convention (a label, a note at the top of each translation) and discipline.</li>
+    </ul>
+
+    <h3>3. All languages on the same page</h3>
+    <p>Each language sits in its own section of a single page. Readers scroll, use tabs or expand sections, or an app shows them the section that matches their language.</p>
+    <ul>
+      <li><strong>Good for:</strong> short pages, one URL to share, content that must stay side by side.</li>
+      <li><strong>Watch out for:</strong> editing gets heavier with each language, and pages become long for anyone who doesn't get the filtered view. Every author must put content in the right section.</li>
+    </ul>
+
+    <h3>4. A translation-management workflow</h3>
+    <p>Content is exported, often as XLIFF files, to professional translators or a translation management system, then imported back.</p>
+    <ul>
+      <li><strong>Good for:</strong> regulated or customer-facing content where human translation and review are mandatory.</li>
+      <li><strong>Watch out for:</strong> cost and turnaround time. It is more than most internal wikis need.</li>
+    </ul>
+
+    <h2 id="rovo">Where Rovo fits</h2>
+    <p>If your Confluence plan includes Rovo (Atlassian includes it in the Standard, Premium and Enterprise plans, not in Free, with a monthly allowance of Rovo credits), you already have machine translation:</p>
+    <ul>
+      <li>Atlassian documents <strong>translation prompts</strong>, marked beta, for 23 languages including English, French, German and Italian. Atlassian itself recommends reviewing the result for accuracy and fluency before publishing.</li>
+      <li>Atlassian's <strong>Global Translator</strong> agent translates while you edit, and publishing a page with the label “translation” makes it create a child page with the translated content.</li>
+    </ul>
+    <p>That covers the first translation. Atlassian's description doesn't cover what happens next: linking the versions for readers, flagging a translation when the original changes, or applying your terminology. Community threads also show that the exact Rovo entry points changed during the rollout, so check what your own site offers today.</p>
+    <p>For many teams, Rovo plus a simple convention (approach 1 or 2) is enough. If you translate a handful of pages a year, start there.</p>
+
+    <h2 id="choose">How to choose</h2>
+    <p>Ask five questions.</p>
+    <ol>
+      <li><strong>How often do source pages change?</strong> Rarely: almost any approach works. Every week: you need change detection, or translations will drift within a month.</li>
+      <li><strong>Do readers need everything, or a selection?</strong> Translate the 20 most-read pages first. Many wikis never need more.</li>
+      <li><strong>Who maintains the translations?</strong> Bilingual colleagues, a documentation owner, external translators? The workflow has to match the people you actually have.</li>
+      <li><strong>What quality is required?</strong> Machine translation is usually fine for internal how-tos. Contracts, HR policies and customer communication deserve a human review.</li>
+      <li><strong>Where may your content go?</strong> Machine translation means sending text to a service. Check which one, and whether your data-protection rules allow it.</li>
+    </ol>
+
+    <h2 id="practices">Good practices whatever the tool</h2>
+    <ul>
+      <li><strong>One original language per space, or at least per page.</strong> Editing the same content in two languages and syncing both ways creates conflicts that no tool resolves cleanly.</li>
+      <li><strong>Mark translations as translations.</strong> A line such as “Machine translation of [original page], reviewed on…” sets expectations for readers.</li>
+      <li><strong>Keep a short glossary.</strong> Product names that must never be translated, and the official term for “on-call duty” or “holiday request” in each language.</li>
+      <li><strong>Decide on the tone once.</strong> Formal or informal address (vous/tu, Sie/du, Lei/tu) should be the same across the wiki.</li>
+      <li><strong>Don't translate everything.</strong> Meeting notes and drafts rarely need it.</li>
+    </ul>
+
+    <h2 id="our-app">Where our app fits, and where it doesn't</h2>
+    <p>We built Quadrilingo for approach 2, for teams working in English, French, German and Italian.</p>
+    <ul>
+      <li>Each translation is a real Confluence page under its original, with a translated title.</li>
+      <li>When the original's content changes, its translations are marked <strong>Outdated</strong> within a few minutes. You update them from the page menu, or a space admin turns on automatic updates. This needs an active subscription or trial.</li>
+      <li>A translation someone edited by hand shows <strong>Edited by hand</strong> and is never overwritten automatically.</li>
+      <li>Under the title, a language menu shows readers every version and its status.</li>
+      <li>A space glossary keeps names and key terms consistent, with an option for Swiss Standard German (“ss” instead of “ß”).</li>
+      <li>Translation is included in the subscription: there is no translation-provider account or API key to set up.</li>
+    </ul>
+    <p>What it doesn't do: languages other than those four, one page holding all languages, human review workflows, or translating a whole space in one go. If you need those, approaches 3 or 4 fit better.</p>
+    <p>Documentation: <a href="/docs/">quadrilingo.com/docs</a></p>
+
+    <h2 id="sources">Sources</h2>
+    <ul class="small">
+      <li>Atlassian, <a href="https://jira.atlassian.com/browse/CONFCLOUD-64788">CONFCLOUD-64788 — Support multiple page versions per language</a> (viewed 23 Nov 2026)</li>
+      <li>Atlassian, <a href="https://www.atlassian.com/licensing/rovo">Rovo licensing</a> (plans that include Rovo, credits; viewed 23 Nov 2026)</li>
+      <li>Atlassian Support, <a href="https://support.atlassian.com/confluence-cloud/docs/learn-about-pre-defined-prompts-in-atlassian-intelligence/">Learn about Rovo's pre-defined prompts</a> (translation prompts, beta; viewed 23 Nov 2026)</li>
+      <li>Atlassian, <a href="https://www.atlassian.com/software/rovo/use-cases/global-translator">Rovo use case: Global Translator</a> (viewed 23 Nov 2026)</li>
+      <li>Atlassian Community, <a href="https://community.atlassian.com/forums/Rovo-questions/Rovo-Translation-Tool-Still-Supported/qaq-p/3141865">Rovo Translation Tool – Still Supported?</a></li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Legal">
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/support/">Support</a></li>
+        <li><a href="/guides/">Guides</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo is an independent app and is not affiliated with Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confluence-Seiten übersetzen: 4 Wege im Vergleich (2026)</title>
+<meta name="description" content="Confluence Cloud hat keine Sprachversionen für Seiten. Vier Wege, Seiten zu übersetzen – Browser, Rovo, Apps, Fachübersetzung – mit Vor- und Nachteilen.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/de/"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Quadrilingo</span></a>
+    <nav class="main-nav" aria-label="Hauptmenü">
+      <ul>
+        <li><a href="/de/#funktionen">Funktionen</a></li>
+        <li><a href="/de/#preise">Preise</a></li>
+        <li><a href="/docs/" hreflang="en">Dokumentation (EN)</a></li>
+        <li><a href="/support/" hreflang="en">Support</a></li>
+      </ul>
+    </nav>
+    <nav class="lang" aria-label="Sprache">
+      <a href="/" lang="en" hreflang="en">EN</a>
+      <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+      <a href="/de/guides/confluence-seiten-uebersetzen/" lang="de" hreflang="de" aria-current="page">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="doc-body">
+    <p class="small"><a href="/guides/">Guides</a></p>
+    <h1>Confluence-Seiten übersetzen: vier Wege im Vergleich</h1>
+    <p class="updated">Aktualisiert am 23. November 2026</p>
+    <p class="lead">Ihre Onboarding-Seite ist auf Deutsch geschrieben, und die neuen Kolleginnen in Lausanne und Lugano sollen sie auf Französisch und Italienisch lesen. Wie kommt die Seite in die anderen Sprachen, und wie bleibt sie dort aktuell? Dieser Artikel vergleicht die vier Wege, die es 2026 in Confluence Cloud gibt.</p>
+    <p class="note"><em>Offenlegung: Dieser Artikel stammt vom Entwickler von Quadrilingo, einer App im Atlassian Marketplace für mehrsprachige Confluence-Seiten. Wir beschreiben auch die Wege, die ohne App auskommen.</em></p>
+
+    <h2 id="ausgangslage">Ausgangslage: Was Confluence Cloud selbst kann</h2>
+    <ul>
+      <li><strong>Die Sprache der Oberfläche</strong> (Menüs, Schaltflächen) stellt jede Person in ihren persönlichen Einstellungen ein. Der Inhalt der Seiten bleibt dabei unverändert.</li>
+      <li><strong>Sprachversionen von Seiten</strong> gibt es nicht. Der Wunsch danach ist bei Atlassian seit Oktober 2018 als CONFCLOUD-64788 erfasst; im November 2026 hat er 178 Stimmen und den Status «Gathering Interest».</li>
+    </ul>
+    <p>Confluence weiss also nicht, dass eine Seite die französische Fassung einer anderen ist. Diese Verbindung müssen Sie selbst herstellen.</p>
+
+    <h2 id="beispiel">Ein Beispiel als roter Faden</h2>
+    <p>Nehmen wir eine typische Seite: «Onboarding – Ihre erste Woche». Sie enthält eine Tabelle mit Terminen, eine Infobox «Wichtig», Links auf das HR-Portal, eine Erwähnung der zuständigen Person und den Begriff «Pikett». Diese Seite wird ein paarmal pro Quartal geändert. Mit ihr im Kopf lassen sich die vier Wege gut vergleichen.</p>
+
+    <h2 id="browser">Weg 1: Browser-Übersetzung</h2>
+    <p>Die eingebaute Übersetzung des Browsers übersetzt die angezeigte Seite.</p>
+    <ul>
+      <li><strong>Vorteile:</strong> kostenlos, sofort verfügbar, gut, um eine Seite schnell zu verstehen.</li>
+      <li><strong>Nachteile:</strong> Die Übersetzung wird nirgends gespeichert; jede Leserin übersetzt neu. Inhalte von Drittanbieter-Apps, die in isolierten Rahmen angezeigt werden, übersetzt der Browser nicht (beschrieben in CONFCLOUD-83563). Und der Text geht an den Übersetzungsdienst des Browsers, was Ihre Datenschutzvorgaben vielleicht nicht erlauben.</li>
+    </ul>
+    <p>Für unser Beispiel: Lesen geht, aber «Pikett» wird je nach Dienst wörtlich oder falsch übersetzt, und die Kollegin in Lausanne hat keine Seite, die sie verlinken kann.</p>
+
+    <h2 id="rovo">Weg 2: Rovo</h2>
+    <p>Atlassian schliesst Rovo in die Pläne Standard, Premium und Enterprise ein (nicht in Free), mit einem monatlichen Kontingent an Rovo-Credits. Für Übersetzungen gibt es:</p>
+    <ol>
+      <li><strong>Übersetzungs-Prompts</strong> (laut Atlassian in der Beta) für 23 Sprachen, darunter Deutsch, Französisch, Italienisch und Englisch. Atlassian empfiehlt selbst, das Ergebnis vor dem Veröffentlichen zu prüfen.</li>
+      <li>Den Agenten <strong>Global Translator:</strong> Er übersetzt beim Schreiben. Wird eine Seite mit dem Label «translation» veröffentlicht, erstellt er eine <strong>übersetzte Unterseite</strong>.</li>
+      <li>Ein in der Atlassian Community beschriebener Weg: Text markieren, <strong>Ask Rovo</strong> wählen, dann die Übersetzungsoption. Laut der Nutzerin bleibt die Formatierung erhalten.</li>
+    </ol>
+    <p><strong>Vorbehalte:</strong> Die Einstiegspunkte haben sich während der Einführung geändert, wie ein Community-Beitrag zeigt; prüfen Sie, was Ihre Website heute anbietet. Die Beschreibung von Atlassian erwähnt weder eine Verknüpfung der Sprachversionen noch eine Markierung veralteter Übersetzungen noch ein Glossar.</p>
+    <p>Für unser Beispiel: Die französische und die italienische Seite entstehen schnell. Bei der nächsten Änderung der Termine müssen Sie selbst daran denken, beide nachzuführen.</p>
+
+    <h2 id="apps">Weg 3: Apps aus dem Marketplace</h2>
+    <p>Im Atlassian Marketplace (Suche «translation») finden Sie verschiedene Ansätze:</p>
+    <ul>
+      <li><strong>Alle Sprachen auf einer Seite:</strong> jede Sprache in einem eigenen Abschnitt, die Leserin sieht ihre. Eine URL, aber mehr Aufwand beim Schreiben.</li>
+      <li><strong>Maschinelle Übersetzung mit Ihrem eigenen Konto</strong> bei einem Übersetzungsdienst: Sie eröffnen das Konto und verwalten API-Schlüssel und Vertrag.</li>
+      <li><strong>Workflows für Fachübersetzer:</strong> Export (oft als XLIFF), Übersetzung ausser Haus, Re-Import.</li>
+      <li><strong>Übersetzung inklusive:</strong> Der App-Anbieter stellt die Übersetzung im Abo bereit.</li>
+    </ul>
+    <p>Fragen Sie vor der Wahl: Erkennt die App Änderungen am Original? Bleiben Korrekturen von Hand erhalten? Wohin geht der Text, unter welchem Vertrag? Bleiben die Übersetzungen normale Seiten, wenn Sie die App deinstallieren?</p>
+
+    <h2 id="fachuebersetzung">Weg 4: Fachübersetzung</h2>
+    <p>Für Reglemente, Verträge oder Kundenkommunikation ist eine professionelle Übersetzung oft Pflicht. Höchste Qualität, aber Kosten und Wartezeit. Bewährt hat sich die Kombination: maschinelle Rohübersetzung, Prüfung durch eine muttersprachliche Person bei heiklen Seiten.</p>
+
+    <h2 id="entscheidungshilfe">Entscheidungshilfe</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Ihre Situation</th><th scope="col">Passender Weg</th></tr></thead>
+        <tbody>
+          <tr><td>Ab und zu eine Seite verstehen</td><td>Browser</td></tr>
+          <tr><td>Wenige Seiten pro Jahr, Rovo vorhanden</td><td>Rovo plus Notiz «Übersetzung von …, Stand …»</td></tr>
+          <tr><td>Viele Seiten, die sich regelmässig ändern</td><td>App mit Änderungserkennung</td></tr>
+          <tr><td>Rechtlich verbindliche Texte</td><td>Fachübersetzung</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="deutsch">Worauf Sie im Deutschen achten sollten</h2>
+    <ul>
+      <li><strong>ss statt ß:</strong> In der Schweiz schreibt man «Strasse», nicht «Straße». Übersetzungsdienste liefern meist Standarddeutsch; ohne Einstellung oder Korrektur stehen im Wiki dann «ß».</li>
+      <li><strong>Sie oder du:</strong> Entscheiden Sie einmal für das ganze Wiki und prüfen Sie, ob das Werkzeug diese Wahl einhält.</li>
+      <li><strong>Fachbegriffe:</strong> «Pikett», «Traktandum», «AHV» oder Ihre Produktnamen brauchen eine feste Übersetzung. Ein kurzes Glossar mit 20 Begriffen verhindert die meisten Beschwerden.</li>
+    </ul>
+
+    <h2 id="unsere-app">Unsere App – was sie kann und was nicht</h2>
+    <p>Quadrilingo haben wir für Teams gebaut, die auf Deutsch, Französisch, Italienisch und Englisch arbeiten:</p>
+    <ul>
+      <li>Sie übersetzen über <strong>••• → Translate this page</strong>. Jede Übersetzung ist eine echte Confluence-Seite unter dem Original, mit übersetztem Titel. Tabellen, Infoboxen, Links und Erwähnungen bleiben an ihrem Platz; Codeblöcke und Makro-Einstellungen werden nie übersetzt.</li>
+      <li>Ändert sich der Inhalt des Originals, werden die Übersetzungen nach wenigen Minuten als <strong>«Veraltet»</strong> markiert. Sie aktualisieren sie über das Seitenmenü oder automatisch, wenn ein Bereichsadministrator das einschaltet (aktives Abo oder Testphase nötig).</li>
+      <li>Eine von Hand korrigierte Übersetzung erscheint als <strong>«Von Hand geändert»</strong> und wird nie automatisch überschrieben.</li>
+      <li>Glossar pro Bereich, mit einer Spalte «Schweizer Hochdeutsch», und die Option «ss» statt «ß».</li>
+      <li>Die Übersetzung ist im Abo enthalten: kein API-Schlüssel, kein Übersetzungskonto.</li>
+    </ul>
+    <p>Was sie nicht kann: andere Sprachen, alle Sprachen auf einer Seite, einen Freigabe-Workflow für menschliche Prüfung, die Übersetzung eines ganzen Bereichs auf einmal. Dokumentation (auf Englisch): <a href="/docs/" hreflang="en">quadrilingo.com/docs</a></p>
+
+    <h2 id="quellen">Quellen</h2>
+    <ul class="small">
+      <li>Atlassian, <a href="https://jira.atlassian.com/browse/CONFCLOUD-64788">CONFCLOUD-64788</a> (abgerufen am 23.11.2026)</li>
+      <li>Atlassian, <a href="https://jira.atlassian.com/browse/CONFCLOUD-83563">CONFCLOUD-83563</a> (abgerufen am 23.11.2026)</li>
+      <li>Atlassian, <a href="https://www.atlassian.com/licensing/rovo">Rovo licensing</a> (Pläne mit Rovo, Credits; abgerufen am 23.11.2026)</li>
+      <li>Atlassian Support, <a href="https://support.atlassian.com/confluence-cloud/docs/learn-about-pre-defined-prompts-in-atlassian-intelligence/">Pre-defined prompts</a> (Übersetzungs-Prompts, Beta; abgerufen am 23.11.2026)</li>
+      <li>Atlassian, <a href="https://www.atlassian.com/de/software/rovo/use-cases/global-translator">Global Translator</a> (abgerufen am 23.11.2026)</li>
+      <li>Atlassian Community, <a href="https://community.atlassian.com/forums/Rovo-questions/Rovo-Translation-Tool-Still-Supported/qaq-p/3141865">Rovo Translation Tool – Still Supported?</a></li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Thibaut Keller · Quadrilingo</p>
+    <nav aria-label="Rechtliches">
+      <ul>
+        <li><a href="/de/privacy/">Datenschutz</a></li>
+        <li><a href="/terms/" hreflang="en">Nutzungsbedingungen (EN)</a></li>
+        <li><a href="/security/" hreflang="en">Sicherheit (EN)</a></li>
+        <li><a href="/support/" hreflang="en">Support (EN)</a></li>
+        <li><a href="/guides/">Guides</a></li>
+      </ul>
+    </nav>
+    <p>Quadrilingo ist eine unabhängige App und steht in keiner Verbindung zu Atlassian.</p>
+  </div>
+</footer>
+</body>
+</html>
